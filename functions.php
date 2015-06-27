@@ -43,19 +43,19 @@ function ae_scripts() {
 
 	// App script
 	wp_enqueue_script(
-		'ae-js',
+		'tmJS',
 		get_template_directory_uri() . '/dist/main.js',
 		array( 'jquery', 'angularjs', 'angularjs-route', 'angularjs-sanitize', 'angularjs-resource', 'angularjs-touch' )
 	);
 
 	// Load custom styles
-	wp_enqueue_style( 'ae-css', get_template_directory_uri() . '/dist/main.css');
+	wp_enqueue_style( 'tmCSS', get_template_directory_uri() . '/dist/main.css');
 
 	// Variables for app script
-	wp_localize_script( 'ae-js', 'aeJS',
+	wp_localize_script( 'tmJS', 'config',
 		array(
 			'api' => get_bloginfo( 'wpurl' ) . '/api',
-			'views' => trailingslashit( get_template_directory_uri() ) . 'views/'
+			'root' => trailingslashit( get_template_directory_uri() )
 		)
 	);
 

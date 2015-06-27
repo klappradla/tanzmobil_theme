@@ -6,16 +6,20 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider, $locationProvider) {
+  .constant('CONFIG', {
+    ROOT_URL: config.root,
+    API_URL: config.api
+  })
+  .config(function ($routeProvider, $locationProvider, CONFIG) {
 
     //$locationProvider.html5Mode(true).hashPrefix('!');
     $routeProvider
       .when('/', {
-        templateUrl: aeJS.views + 'home.html',
+        templateUrl: CONFIG.ROOT_URL + 'views/home.html',
         controller: 'mycontroller'
       })
       .when('/about', {
-        templateUrl: aeJS.views + 'about.html',
+        templateUrl: CONFIG.ROOT_URL + 'views/about.html',
         controller: 'mycontroller'
       });
     // $routeProvider
@@ -48,18 +52,12 @@ angular
     //   });
   })
   .filter('unsafe', function($sce) { return $sce.trustAsHtml; })
-  .run( ['$rootScope', function($rootScope) {
-
-    // Variables defined by wp_localize_script
-    $rootScope.api = aeJS.api;
-
-  }])
   .controller( 'mycontroller', function( $scope, $http, $sce) {
 
     // Load posts from the WordPress API
     $http({
       method: 'GET',
-      url: $scope.api + '/get_posts',
+      url: config.api + '/get_posts',
       params: {
       },
     }).
