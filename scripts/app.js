@@ -1,47 +1,41 @@
 'use scrict';
-var myapp = angular.module( 'myapp', ['ngRoute'] );
+angular
+  .module( 'myapp', ['ngRoute'] )
+  .config(function ($routeProvider) {
 
+    //$locationProvider.html5Mode(true).hashPrefix('!');
 
-myapp.config(function ($routeProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: aeJS.views + 'home.html',
+        controller: 'mycontroller'
+      })
+      .when('/about', {
+        templateUrl: aeJS.views + 'about.html',
+        controller: 'mycontroller'
+      });
+  })
+  .filter('unsafe', function($sce) { return $sce.trustAsHtml; })
+  .run( ['$rootScope', function($rootScope) {
 
-  //$locationProvider.html5Mode(true).hashPrefix('!');
+    // Variables defined by wp_localize_script
+    $rootScope.api = aeJS.api;
 
-  $routeProvider
-    .when('/', {
-      templateUrl: aeJS.views + 'home.html',
-      controller: 'mycontroller'
-    })
-    .when('/about', {
-      templateUrl: aeJS.views + 'about.html',
-      controller: 'mycontroller'
-    });
-});
+  }])
+  .controller( 'mycontroller', function( $scope, $http, $sce) {
 
-myapp.filter('unsafe', function($sce) { return $sce.trustAsHtml; });
+    // Load posts from the WordPress API
+    $http({
+      method: 'GET',
+      url: $scope.api + '/get_posts',
+      params: {
+      },
+    }).
+    success( function( data, status, headers, config ) {
+      console.log( $scope.api );
+      console.log( data );
+      $scope.posts = data.posts;
+    }).
+    error(function(data, status, headers, config) {});
 
-// Set the configuration
-myapp.run( ['$rootScope', function($rootScope) {
-
-  // Variables defined by wp_localize_script
-  $rootScope.api = aeJS.api;
-
-}]);
-
-// Add a controller
-myapp.controller( 'mycontroller', function( $scope, $http, $sce) {
-
-  // Load posts from the WordPress API
-  $http({
-    method: 'GET',
-    url: $scope.api + '/get_posts',
-    params: {
-    },
-  }).
-  success( function( data, status, headers, config ) {
-    console.log( $scope.api );
-    console.log( data );
-    $scope.posts = data.posts;
-  }).
-  error(function(data, status, headers, config) {});
-
-});
+  });
