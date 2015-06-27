@@ -1,0 +1,17 @@
+@mixin breakpoint($class) {
+  @if $class == mp {
+    @media (max-width: 320px) { @content; }
+  }
+  @if $class == ml {
+    @media (min-width: 321px) and (max-width: 480px) { @content; }
+  }
+  @if $class == tp {
+    @media (min-width: 481px) and (max-width: 768px) { @content; }
+  }
+  @if $class == tl {
+    @media (min-width: 769px) and (max-width: 1024px) { @content; }
+  } 
+  @else {
+    @warn "Breakpoint mixin supports: mp, ml, tp, tl";
+  }
+}
