@@ -1,28 +1,24 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> ng-app="tanzmobil">
+<html <?php language_attributes(); ?>>
 <head>
 	<title>Tanzmobil</title>
 	<?php wp_head();?>
 </head>
-<body>
+<body ng-app="tanzmobil">
 
-	<div class="col-width">
+	<header class="i-container" >
+    <object id="car" type="image/svg+xml" data="<?php echo get_bloginfo('template_url') ?>/images/car.svg">Your browser does not support SVG</object>
+    <nav ng-controller="NavCtrl as nav">
+      <a ng-class="{ active: nav.isActive('/') }" ng-href="/#/">Home</a>
+      <a ng-class="{ active: nav.isActive('/interviews') }" ng-href="/#interviews">Interviews</a>
+      <a ng-class="{ active: nav.isActive('/about')}" ng-href="/#about">About</a>
+      <a ng-class="{ active: nav.isActive('/contact')}" ng-href="/#contact/">Contact</a>
+    </nav>
+  </header>
 
-		<header>
-			<h1>Tanzmobil</h1>
-			<p>Display a list of recent posts.</p>
-		</header>
+  <main class="i-container" ng-view=""></main>
 
-		<div ng-controller="mycontroller">
-			<article ng-repeat="post in posts">
-				<h3>{{ post.title }}</h3>
-				<div ng-bind-html="post.content | unsafe"></div>
-			</article>
-		</div>
-
-	</div>
-
-	<main ng-view="">
+  <div class="footer"></div>
 
 	<?php wp_footer();?>
 </body>

@@ -54,7 +54,7 @@ function ae_scripts() {
 	// Variables for app script
 	wp_localize_script( 'tmJS', 'config',
 		array(
-			'api' => get_bloginfo( 'wpurl' ) . '/api',
+			'api' => get_bloginfo( 'wpurl' ) . '/api/',
 			'root' => trailingslashit( get_template_directory_uri() )
 		)
 	);

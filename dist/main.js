@@ -16,57 +16,226 @@ angular
     $routeProvider
       .when('/', {
         templateUrl: CONFIG.ROOT_URL + 'views/home.html',
-        controller: 'mycontroller'
+        controller: 'HomeCtrl'
       })
       .when('/about', {
         templateUrl: CONFIG.ROOT_URL + 'views/about.html',
-        controller: 'mycontroller'
+        controller: 'AboutCtrl'
+      })
+      .when('/interviews', {
+        templateUrl: CONFIG.ROOT_URL + 'views/interviews.html',
+        controller: 'InterviewsCtrl'
+      })
+      .when('/interviews/:post', {
+        templateUrl: CONFIG.ROOT_URL + 'views/post.html',
+        controller: 'PostCtrl'
+      })
+      .when('/contact', {
+        templateUrl: CONFIG.ROOT_URL + 'views/page.html',
+        controller: 'PageCtrl'
+      })
+      .when('/partners', {
+        templateUrl: CONFIG.ROOT_URL + 'views/page.html',
+        controller: 'PageCtrl'
+      })
+      .otherwise({
+        redirectTo: '/'
       });
-    // $routeProvider
-    //   .when('/', {
-    //     templateUrl: 'views/home.html',
-    //     controller: 'HomeCtrl'
-    //   })
-    //   .when('/about', {
-    //     templateUrl: 'views/about.html',
-    //     controller: 'AboutCtrl'
-    //   })
-    //   .when('/interviews', {
-    //     templateUrl: 'views/interviews.html',
-    //     controller: 'InterviewsCtrl'
-    //   })
-    //   .when('/interviews/:post', {
-    //     templateUrl: 'views/post.html',
-    //     controller: 'PostCtrl'
-    //   })
-    //   .when('/contact', {
-    //     templateUrl: 'views/page.html',
-    //     controller: 'PageCtrl'
-    //   })
-    //   .when('/partners', {
-    //     templateUrl: 'views/page.html',
-    //     controller: 'PageCtrl'
-    //   })
-    //   .otherwise({
-    //     redirectTo: '/'
-    //   });
-  })
-  .filter('unsafe', function($sce) { return $sce.trustAsHtml; })
-  .controller( 'mycontroller', function( $scope, $http, $sce) {
+  });'use strict';
 
-    // Load posts from the WordPress API
-    $http({
-      method: 'GET',
-      url: config.api + '/get_posts',
-      params: {
-      },
-    }).
-    success( function( data, status, headers, config ) {
-      console.log( $scope.api );
-      console.log( data );
-      $scope.posts = data.posts;
-    }).
-    error(function(data, status, headers, config) {});
+angular.module('tanzmobil')
+  .controller('AboutCtrl', function ($scope) {
+    $scope.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
+    ];
+  });
+;'use strict';
+
+angular.module('tanzmobil')
+  .controller('HomeCtrl', function ($scope, WpService) {
+
+    // WpService.post('zwei-eulen').then(function(response) {
+    //   console.log(response);
+    // });
+    WpService.postsByCategory('german').then(function(response) {
+      console.log(response);
+    });
+  });;'use strict';
+
+angular.module('tanzmobil')
+  .controller('InterviewsCtrl', function ($scope, WpService) {
+
+    WpService.allPosts().then(function(response) {
+      $scope.posts = response;
+      console.log($scope.posts);
+    });
+  });
+;'use strict';
+
+angular.module('tanzmobil')
+  .controller('NavCtrl', function ($scope, $location) {
+    
+    function isActive(view) {
+      return view === $location.path();
+    };
+
+    return {
+      isActive: isActive
+    };    
+  });
+;'use strict';
+
+angular.module('tanzmobil')
+  .controller('PageCtrl', function ($scope, WpService, $location) {
+    WpService.page($location.url()).then(function(response) {
+      $scope.page = response;
+    });
+  });
+;'use strict';
+
+angular.module('tanzmobil')
+  .controller('PostCtrl', function ($scope, $routeParams, $sce, WpService) {
+    WpService.post($routeParams.post).then(function(response) {
+      $scope.post = response;
+      $scope.postContent = $sce.trustAsHtml($scope.post.content);
+    });
+
+    // function reading() {
+    //   return true;
+    // };
+
+    // return {
+    //   reading: reading
+    // }
+  });
+;'use strict';
+
+angular.module('tanzmobil')
+  .directive('backgroundColor', function (categoryColor) {
+    var alpha = true;
+    
+    return function (scope, element, attrs) {
+      element.css({
+        'background-color': categoryColor.getColor(attrs.backgroundColor, alpha)
+        });
+    };
+  });
+;'use strict';
+
+angular.module('tanzmobil')
+  .directive('backgroundImage', function () {
+    return function (scope, element, attrs) {
+      element.css({
+        'background-image': 'url(' + attrs.backgroundImage + ')',
+          'background-size': 'cover',
+          'background-repeat': 'no-repeat',
+          'background-position': 'center center'
+        });
+    };
+  });;'use strict';
+
+angular.module('tanzmobil')
+  .directive('fontColor', function (categoryColor) {
+    return function (scope, element, attrs) {
+      element.css({
+        'color': categoryColor.getColor(attrs.fontColor, true)
+        });
+    };
+  });
+;'use strict';
+
+angular.module('tanzmobil')
+  .service('categoryColor', function () {
+    function getColor(category, alpha) {
+      alpha = alpha || false;
+      switch(category) {
+        case 'german':
+          if (alpha) {
+            return 'rgba(237,85,101,0.5)';  
+          }
+          return '#ED5565';
+        case 'english':
+          if (alpha) {
+            return 'rgba(252,110,81,0.5)';
+          }
+          return '#FC6E51';
+        case 'french':
+          if (alpha) {
+            return 'rgba(172,146,236,0.5)';
+          }
+          return '#AC92EC';
+        default:
+          if (alpha) {
+            return 'rgba(101,109,120,0.5)';
+          }
+          return '#6B6B6B';
+      }
+    }
+
+    return {
+      getColor: getColor
+    };
+  });
+;'use strict';
+
+angular.module('tanzmobil')
+  .service('WpService', function ($http, CONFIG) {
+  // AngularJS will instantiate a singleton by calling "new" on this function
+
+    var apiUrl = CONFIG.API_URL;
+
+    function allPosts() {
+      return queryApi('get_posts').then(function(response) {
+        return response.data.posts;
+      });
+    }
+
+    function recentPosts() {
+      return queryApi('get_recent_posts')
+        .then(function(response) {
+          return response.data.posts;
+        });
+    }
+
+    // get wp page by slug
+    function page(slug) {
+      return queryApi('get_page/?slug=' + slug)
+        .then(function(response) {
+          return response.data.page;
+        });
+    }
+
+    function post(slug) {
+      return queryApi('get_post/?slug=' + slug)
+        .then(function(response) {
+          return response.data.post;
+        });
+    }
+
+    function postsByCategory(slug) {
+      return queryApi('get_category_posts/?slug=' + slug)
+        .then(function(response) {
+          return response.data.posts;
+        });      
+    }
+
+    function queryApi(url) {
+      return $http
+        .get(apiUrl + url, { cache: true })
+        .then(function(response) {
+          return response;
+        });
+    }
+
+    return {
+      allPosts: allPosts,
+      recentPosts: recentPosts,
+      page: page,
+      post: post,
+      postsByCategory, postsByCategory
+    };
 
   });
 //# sourceMappingURL=main.js.map
