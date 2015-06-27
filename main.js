@@ -3,3 +3,4 @@ var one = function() {
 };var two = function() {
   console.log('yeah');
 }
+//# sourceMappingURL=main.js.map

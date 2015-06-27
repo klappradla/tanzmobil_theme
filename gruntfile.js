@@ -5,20 +5,21 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         files: {
-          'styles/main.css' : 'styles/main.scss'
+          'main.css' : 'styles/main.scss'
         }
       }
     },
     concat: {
       options: {
         // define a string to put between each file in the concatenated output
-        separator: ';'
+        separator: ';',
+        sourceMap: true
       },
       dist: {
         // the files to concatenate
         src: ['scripts/**/*.js'],
         // the location of the resulting JS file
-        dest: 'js/main.js'
+        dest: 'main.js'
       }
     },
     watch: {
