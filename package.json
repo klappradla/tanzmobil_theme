@@ -2,7 +2,7 @@
   "name": "tanzmobil_theme",
   "version": "1.0.0",
   "description": "",
-  "main": "index.php",
+  "main": "tm_theme/index.php",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
