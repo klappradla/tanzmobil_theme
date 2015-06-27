@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         files: {
-          'styles/main.css' : 'styles/main.scss'
+          'dist/main.css' : 'styles/main.scss'
         }
       }
     },
@@ -19,16 +19,16 @@ module.exports = function(grunt) {
         // the files to concatenate
         src: ['scripts/**/*.js'],
         // the location of the resulting JS file
-        dest: 'scripts/main.js'
+        dest: 'dist/main.js'
       }
     },
     watch: {
       css: {
-        files: '**/*.scss',
+        files: 'styles/**/*.scss',
         tasks: ['sass']
       },
       js: {
-        files: '**/*.js',
+        files: 'scripts/**/*.js',
         tasks: ['concat']
       }
     }

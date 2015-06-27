@@ -45,3 +45,4 @@ myapp.controller( 'mycontroller', function( $scope, $http, $sce) {
   error(function(data, status, headers, config) {});
 
 });
+//# sourceMappingURL=main.js.map

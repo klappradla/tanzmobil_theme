@@ -15,10 +15,10 @@ function ae_scripts() {
 	wp_enqueue_script( 'ae-angular-route', '//ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular-route.js', array( ), '', true );
 
 	// Load custom app script
-	wp_enqueue_script( 'ae-js', get_template_directory_uri() . '/scripts/main.js', array(), '', true );
+	wp_enqueue_script( 'ae-js', get_template_directory_uri() . '/dist/main.js', array(), '', true );
 
 	// Load custom styles
-	wp_enqueue_style( 'ae-css', get_template_directory_uri() . '/styles/main.css');
+	wp_enqueue_style( 'ae-css', get_template_directory_uri() . '/dist/main.css');
 
 	// Variables for app script
 	wp_localize_script( 'ae-js', 'aeJS',
