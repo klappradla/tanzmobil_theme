@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> ng-app="myapp">
+<html <?php language_attributes(); ?> ng-app="tanzmobil">
 <head>
 	<title>Tanzmobil</title>
 	<?php wp_head();?>

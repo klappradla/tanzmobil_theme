@@ -32,6 +32,11 @@ function ae_scripts() {
 	);
 
 	wp_register_script(
+		'angularjs-touch',
+		get_stylesheet_directory_uri() . '/bower_components/angular-touch/angular-touch.min.js'
+	);
+
+	wp_register_script(
 		'jquery',
 		get_stylesheet_directory_uri() . '/bower_components/jquery/dist/jquery.min.js'
 	);
@@ -40,7 +45,7 @@ function ae_scripts() {
 	wp_enqueue_script(
 		'ae-js',
 		get_template_directory_uri() . '/dist/main.js',
-		array( 'jquery', 'angularjs', 'angularjs-route', 'angularjs-sanitize', 'angularjs-resource' )
+		array( 'jquery', 'angularjs', 'angularjs-route', 'angularjs-sanitize', 'angularjs-resource', 'angularjs-touch' )
 	);
 
 	// Load custom styles
