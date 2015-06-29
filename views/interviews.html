@@ -1,17 +1,5 @@
 <div class="i-g interviews">
   <div ng-repeat="post in posts"  class="i-3 i-mp-4 i-ml-2 i-tp-2 i-tl-1 interview">
-
-    <a ng-href="#/interviews/{{ post.slug }}">
-
-      <figure background-color="{{post.categories[0].slug}}">
-        <img ng-show="{{ post.thumbnail.length }}" ng-src="{{ post.thumbnail }}"/>
-        <figcaption>
-          <h2>{{ post.title }}</h2>
-          <p class="post-meta">{{ post.custom_fields.description[0] }}<p>
-          <p class="post-category" font-color="{{ post.categories[0].slug }}">{{ post.categories[0].slug }}</p>
-        </figcaption>     
-      </figure>
-
-    </a>
+    <interview-teaser></interview-teaser>
   </div>
 </div>

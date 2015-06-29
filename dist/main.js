@@ -111,6 +111,9 @@ angular.module('tanzmobil')
     // }
   });
 ;'use strict';
+angular.module('tanzmobil')
+  .controller('TeaserCtrl', function() {
+  });;'use strict';
 
 angular.module('tanzmobil')
   .directive('backgroundColor', function (categoryColor) {
@@ -145,6 +148,15 @@ angular.module('tanzmobil')
     };
   });
 ;'use strict';
+angular.module('tanzmobil')
+  .directive('interviewTeaser', function(CONFIG) {
+    return {
+      restrict: 'E',
+      templateUrl: CONFIG.ROOT_URL + 'views/interviewteaser.html',
+      controller: 'TeaserCtrl',
+      controllerAs: 'teaser'
+    }
+  });'use strict';
 
 angular.module('tanzmobil')
   .service('categoryColor', function () {
