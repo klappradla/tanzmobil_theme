@@ -6,7 +6,8 @@ angular.module('tanzmobil')
     // WpService.post('zwei-eulen').then(function(response) {
     //   console.log(response);
     // });
-    WpService.postsByCategory('german').then(function(response) {
+    WpService.recentPosts(2).then(function(response) {
       console.log(response);
+      $scope.posts = response;
     });
   });

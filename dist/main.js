@@ -59,8 +59,9 @@ angular.module('tanzmobil')
     // WpService.post('zwei-eulen').then(function(response) {
     //   console.log(response);
     // });
-    WpService.postsByCategory('german').then(function(response) {
+    WpService.recentPosts(2).then(function(response) {
       console.log(response);
+      $scope.posts = response;
     });
   });;'use strict';
 
@@ -204,8 +205,9 @@ angular.module('tanzmobil')
       });
     }
 
-    function recentPosts() {
-      return queryApi('get_recent_posts')
+    function recentPosts(count) {
+      count = count || 4;
+      return queryApi('get_recent_posts/?count=' + count)
         .then(function(response) {
           return response.data.posts;
         });

@@ -12,8 +12,9 @@ angular.module('tanzmobil')
       });
     }
 
-    function recentPosts() {
-      return queryApi('get_recent_posts')
+    function recentPosts(count) {
+      count = count || 4;
+      return queryApi('get_recent_posts/?count=' + count)
         .then(function(response) {
           return response.data.posts;
         });
