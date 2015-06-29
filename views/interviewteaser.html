@@ -1,14 +1,12 @@
+<a ng-href="#/interviews/{{ post.slug }}">
 
+  <figure background-color="{{post.categories[0].slug}}">
+    <img ng-show="{{ post.thumbnail.length }}" ng-src="{{ post.thumbnail }}"/>
+    <figcaption>
+      <h2>{{ post.title }}</h2>
+      <p class="post-meta">{{ post.custom_fields.description[0] }}<p>
+      <p class="post-category" font-color="{{ post.categories[0].slug }}">{{ post.categories[0].slug }}</p>
+    </figcaption>     
+  </figure>
 
-  <a ng-href="#/interviews/{{ post.slug }}">
-
-    <figure background-color="{{post.categories[0].slug}}">
-      <img ng-show="{{ post.thumbnail.length }}" ng-src="{{ post.thumbnail }}"/>
-      <figcaption>
-        <h2>{{ post.title }}</h2>
-        <p class="post-meta">{{ post.custom_fields.description[0] }}<p>
-        <p class="post-category" font-color="{{ post.categories[0].slug }}">{{ post.categories[0].slug }}</p>
-      </figcaption>     
-    </figure>
-
-  </a>
+</a>

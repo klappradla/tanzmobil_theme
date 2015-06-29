@@ -4,9 +4,9 @@
 	<title>Tanzmobil</title>
 	<?php wp_head();?>
 </head>
-<body ng-app="tanzmobil">
+<body ng-app="tanzmobil" class="i-container">
 
-	<header class="i-container" >
+	<header>
     <object id="car" type="image/svg+xml" data="<?php echo get_bloginfo('template_url') ?>/images/car.svg">Your browser does not support SVG</object>
     <nav ng-controller="NavCtrl as nav">
       <a ng-class="{ active: nav.isActive('/') }" ng-href="/#/">Home</a>
@@ -16,9 +16,11 @@
     </nav>
   </header>
 
-  <main class="i-container" ng-view=""></main>
+  <main ng-view=""></main>
 
-  <div class="footer"></div>
+  <footer class="i-g">
+    <div class="i-12 footer">footer goes here</div>
+  </footer>
 
 	<?php wp_footer();?>
 </body>
