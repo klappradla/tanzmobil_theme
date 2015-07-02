@@ -15,6 +15,18 @@ $color-font-main: #434A54;
 $color-font-light: #656D78;
 $color-font-white: #ffffff;
 
+// colors
+$color-background-red: #ED5565;
+$color-background-orange: #FC6E51;
+$color-background-violet: #AC92EC;
+$color-background-green: #48CFAD;
+$color-background-blue: #5D9CEC;
+
+$color-background-red-alpha: rgba($color-background-red, 0.5);
+$color-background-orange-alpha: rgba($color-background-orange, 0.5);
+$color-background-violet-alpha: rgba($color-background-violet, 0.5);
+$color-background-green-alpha: rgba($color-background-green, 0.5);
+$color-background-blue-alpha: rgba($color-background-blue, 0.5);
 
 // $font-tertiary: 'Loved by the King', cursive;
 
