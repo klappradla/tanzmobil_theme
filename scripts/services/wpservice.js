@@ -55,7 +55,7 @@ angular.module('tanzmobil')
       recentPosts: recentPosts,
       page: page,
       post: post,
-      postsByCategory, postsByCategory
+      postsByCategory: postsByCategory
     };
 
   });

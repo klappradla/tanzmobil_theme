@@ -10,6 +10,9 @@ angular
     ROOT_URL: config.root,
     API_URL: config.api
   })
+  .config(function($sceDelegateProvider) {
+    $sceDelegateProvider.resourceUrlWhitelist(['**']);
+  })
   .config(function ($routeProvider, $locationProvider, CONFIG) {
 
     //$locationProvider.html5Mode(true).hashPrefix('!');
