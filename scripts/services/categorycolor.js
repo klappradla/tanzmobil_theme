@@ -17,14 +17,14 @@ angular.module('tanzmobil')
           return '#FC6E51';
         case 'french':
           if (alpha) {
-            return 'rgba(172,146,236,0.5)';
+            return 'rgba(93,156,236,0.5)';
           }
-          return '#AC92EC';
+          return '#5D9CEC';
         default:
           if (alpha) {
-            return 'rgba(101,109,120,0.5)';
+            return 'rgba(204,209,217,0.5)';
           }
-          return '#6B6B6B';
+          return '#CCD1D9';
       }
     }
 
