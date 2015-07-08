@@ -189,8 +189,12 @@ body {
       width: 100%;
       height: auto; }
 
-.page p {
-  margin-bottom: 1.5rem; }
+.page .page-content {
+  padding-left: 10px;
+  padding-right: 10px; }
+  .page .page-content p {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem; }
 
 .interviews .interview a {
   text-decoration: none; }
