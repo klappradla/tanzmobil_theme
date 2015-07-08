@@ -41,11 +41,16 @@ function ae_scripts() {
 		get_stylesheet_directory_uri() . '/bower_components/jquery/dist/jquery.min.js'
 	);
 
+	wp_register_script(
+		'snap.svg',
+		get_stylesheet_directory_uri() . '/bower_components/snap.svg/dist/snap.svg-min.js'
+	);
+
 	// App script
 	wp_enqueue_script(
 		'tmJS',
 		get_template_directory_uri() . '/dist/main.js',
-		array( 'jquery', 'angularjs', 'angularjs-route', 'angularjs-sanitize', 'angularjs-resource', 'angularjs-touch' )
+		array( 'jquery', 'snap.svg', 'angularjs', 'angularjs-route', 'angularjs-sanitize', 'angularjs-resource', 'angularjs-touch' )
 	);
 
 	// Load custom styles

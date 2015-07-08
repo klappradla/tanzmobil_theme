@@ -18,6 +18,7 @@
     "jquery": "~2.1.4",
     "angular-sanitize": "~1.4.1",
     "angular-resource": "~1.4.1",
-    "angular-touch": "~1.4.1"
+    "angular-touch": "~1.4.1",
+    "snap.svg": "~0.4.1"
   }
 }
