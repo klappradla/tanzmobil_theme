@@ -309,7 +309,9 @@ div.page-section {
       transform: translate3d(0, 0, 0); }
 
 div.home div#jumbo {
-  padding: 10% 0;
+  margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   background-color: rgba(72, 207, 173, 0.5); }
   div.home div#jumbo div.title {
     margin-right: 30%;
@@ -348,7 +350,7 @@ header #car {
   width: 150px; }
 header nav {
   margin: 0 auto;
-  padding: 20px 0 20px;
+  padding: 20px 0 40px;
   text-align: center;
   font-family: "Raleway", sans-serif; }
   header nav a {
