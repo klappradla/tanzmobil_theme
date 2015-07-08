@@ -1,6 +1,6 @@
 #theater {
 
-  padding-left: 20px;
+  padding: 20px;
   font-size: 1.25rem;
 
   .question {
@@ -14,7 +14,7 @@
 }
 
 .contact {
-  padding-top: 40px;
+  background-color: $gray-light-alpha;
 
   i {
     color: $gray-medium;
@@ -23,17 +23,21 @@
   table {
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   th {
     text-transform: lowercase;
     padding-bottom: 0.5rem;
+    font-weight: 400;
   }
 
   td {
     vertical-align: top;
     padding-right: 0.5rem;
     padding-bottom: 0.25rem;
+    font-weight: 300;
 
     a {
       text-decoration: none;
@@ -43,5 +47,9 @@
         color: $black;
       }
     }
+  }
+
+  p {
+    margin: 20px;
   }
 }

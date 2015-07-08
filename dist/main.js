@@ -226,7 +226,7 @@ angular.module('tanzmobil')
 
       // scenario
       theater
-        .write(400)
+        .write(200)
         .write('question:You want to stay updated?')
         .write(200)
         .write('answer:Subscribe to our newsletter: newsletter@tanzmobil.eu !')
@@ -248,7 +248,7 @@ angular.module('tanzmobil')
     }
 
     return function(scope, element, attrs) {
-      angular.element(window).load(function() {
+       scope.$on('$viewContentLoaded', function() {
         init();
         play();
       });

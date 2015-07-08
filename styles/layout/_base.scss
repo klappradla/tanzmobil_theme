@@ -16,8 +16,16 @@ body {
   font-family: $font-main;
   color: $color-font-main;
   background-color: #ffffff;
+}
 
-  main {
-    padding-top: 20px;
+div.page-section {
+  margin-top: 40px;;
+
+  h2 {
+    font-size: 1rem;
+    font-weight: 300;
+    font-family: $font-headline;
+    text-transform: lowercase;
+    color: $color-font-main;
   }
 }

@@ -155,8 +155,15 @@ body {
   font-family: "Roboto", sans-serif;
   color: #434A54;
   background-color: #ffffff; }
-  body main {
-    padding-top: 20px; }
+
+div.page-section {
+  margin-top: 40px; }
+  div.page-section h2 {
+    font-size: 1rem;
+    font-weight: 300;
+    font-family: "Raleway", sans-serif;
+    text-transform: lowercase;
+    color: #434A54; }
 
 .post {
   margin: auto;
@@ -190,6 +197,7 @@ body {
       height: auto; }
 
 .page .page-content {
+  padding-top: 40px;
   padding-left: 10px;
   padding-right: 10px; }
   .page .page-content p {
@@ -197,7 +205,7 @@ body {
     margin-bottom: 1.5rem; }
 
 #theater {
-  padding-left: 20px;
+  padding: 20px;
   font-size: 1.25rem; }
   #theater .question, #theater .post .post-content h2, .post .post-content #theater h2 {
     font-weight: 400;
@@ -206,24 +214,30 @@ body {
     font-weight: 300; }
 
 .contact {
-  padding-top: 40px; }
+  background-color: rgba(204, 209, 217, 0.5); }
   .contact i {
     color: #AAB2BD; }
   .contact table {
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px; }
   .contact th {
     text-transform: lowercase;
-    padding-bottom: 0.5rem; }
+    padding-bottom: 0.5rem;
+    font-weight: 400; }
   .contact td {
     vertical-align: top;
     padding-right: 0.5rem;
-    padding-bottom: 0.25rem; }
+    padding-bottom: 0.25rem;
+    font-weight: 300; }
     .contact td a {
       text-decoration: none;
       color: #48CFAD; }
       .contact td a:hover {
         color: #434A54; }
+  .contact p {
+    margin: 20px; }
 
 .interviews .interview a {
   text-decoration: none; }
