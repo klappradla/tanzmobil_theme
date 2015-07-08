@@ -22,15 +22,15 @@
   <main ng-view=""></main>
 
   <footer class="i-g">
-    <div class="i-12 footer">
-      <span class="copywrite">
-        <i class="fa fa-copyright"></i> tanzmobil 2015 Vienna | Berlin
-      </span>
-    </div>
     <div class="i-12 footer-social">
       <a href="https://www.facebook.com/" target="blank"><i class="fa fa-facebook-official fa-2x"></i></a>
       <a href="https://instagram.com/" target="blank"><i class="fa fa-instagram fa-2x"></i></a>
       <a href="https://vimeo.com/" target="blank"><i class="fa fa-vimeo-square fa-2x"></i></a>
+    </div>
+    <div class="i-12 footer-copywrite">
+      <span class="copywrite">
+        <i class="fa fa-copyright"></i> tanzmobil 2015 Vienna | Berlin
+      </span>
     </div>
   </footer>
 
