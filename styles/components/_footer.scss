@@ -1,7 +1,32 @@
 footer {
-  div.footer {
-    border-top: 1px solid #000;
-    margin-top: 5%;
-    margin-bottom: 5%;
+  color: $color-font-light;
+  
+  div.footer-copywrite {
+    margin-top: 40px;
+    margin-bottom: 0;
+    border-top: 1px solid #CCD1D9;
+    text-align: right;
+    font-size: 0.75rem;
+    color: $gray-medium;
+  }
+
+  div.footer-social {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 80px;
+
+    a {
+      color: $gray-medium;
+      text-decoration: none;
+      letter-spacing: 5px;
+
+      &:visited {
+        color: $gray-medium;
+      }
+
+      &:hover {
+        color: $green;
+      }
+    }
   }
 }

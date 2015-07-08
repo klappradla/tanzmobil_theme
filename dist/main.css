@@ -253,7 +253,7 @@ body {
 
 div.home div#jumbo {
   padding: 10% 0;
-  background-color: rgba(93, 156, 236, 0.5); }
+  background-color: #ED5565; }
   div.home div#jumbo div.title {
     margin-right: 30%;
     position: relative;
@@ -330,9 +330,26 @@ header nav {
     -moz-transform: translateY(0px);
     transform: translateY(0px); }
 
-footer div.footer {
-  border-top: 1px solid #000;
-  margin-top: 5%;
-  margin-bottom: 5%; }
+footer {
+  color: #656D78; }
+  footer div.footer-copywrite {
+    margin-top: 40px;
+    margin-bottom: 0;
+    border-top: 1px solid #CCD1D9;
+    text-align: right;
+    font-size: 0.75rem;
+    color: #AAB2BD; }
+  footer div.footer-social {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 80px; }
+    footer div.footer-social a {
+      color: #AAB2BD;
+      text-decoration: none;
+      letter-spacing: 5px; }
+      footer div.footer-social a:visited {
+        color: #AAB2BD; }
+      footer div.footer-social a:hover {
+        color: #48CFAD; }
 
 /*# sourceMappingURL=main.css.map */

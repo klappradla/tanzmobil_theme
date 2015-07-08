@@ -21,9 +21,13 @@ angular
         templateUrl: CONFIG.ROOT_URL + 'views/home.html',
         controller: 'HomeCtrl'
       })
+      .when('/news', {
+        templateUrl: CONFIG.ROOT_URL + 'views/page.html',
+        controller: 'PageCtrl'
+      })
       .when('/about', {
-        templateUrl: CONFIG.ROOT_URL + 'views/about.html',
-        controller: 'AboutCtrl'
+        templateUrl: CONFIG.ROOT_URL + 'views/page.html',
+        controller: 'PageCtrl'
       })
       .when('/interviews', {
         templateUrl: CONFIG.ROOT_URL + 'views/interviews.html',
@@ -34,10 +38,6 @@ angular
         controller: 'PostCtrl'
       })
       .when('/contact', {
-        templateUrl: CONFIG.ROOT_URL + 'views/page.html',
-        controller: 'PageCtrl'
-      })
-      .when('/partners', {
         templateUrl: CONFIG.ROOT_URL + 'views/page.html',
         controller: 'PageCtrl'
       })
