@@ -8,9 +8,9 @@
 </head>
 <body ng-app="tanzmobil" class="i-container">
 
-	<header>
+	<header class="i-g">
     <object car id="car" type="image/svg+xml" data="<?php echo get_bloginfo('template_url') ?>/images/car.svg">Your browser does not support SVG</object>
-    <nav ng-controller="NavCtrl as nav">
+    <nav ng-controller="NavCtrl as nav" class="i-12">
       <a ng-class="{ active: nav.isActive('/') }" ng-href="/wordpress/#/">Home</a>
       <a ng-class="{ active: nav.isActive('/about')}" ng-href="/wordpress/#about">About</a>
       <a ng-class="{ active: nav.isActive('/news')}" ng-href="/wordpress/#news">News</a>

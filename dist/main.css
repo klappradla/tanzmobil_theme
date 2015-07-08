@@ -253,7 +253,7 @@ body {
 
 div.home div#jumbo {
   padding: 10% 0;
-  background-color: #ED5565; }
+  background-color: rgba(72, 207, 173, 0.5); }
   div.home div#jumbo div.title {
     margin-right: 30%;
     position: relative;
@@ -286,18 +286,19 @@ div#progress-bar {
 
 header #car {
   display: block;
-  padding: 5% 0;
+  padding: 40px 0 20px;
   margin: 0 auto;
-  width: 100px; }
+  width: 150px; }
 header nav {
   margin: 0 auto;
-  padding: 0 0 5%;
+  padding: 20px 0 20px;
   text-align: center;
-  font-family: "Raleway", sans-serif; }
+  font-family: "Raleway", sans-serif;
+  border-top: 1px solid #CCD1D9; }
   header nav a {
     position: relative;
     display: inline-block;
-    margin: 0 0.5em;
+    margin: 0 0.5rem;
     outline: none;
     color: #656D78;
     text-decoration: none;
@@ -354,6 +355,6 @@ footer div.footer-social {
     footer div.footer-social a:visited {
       color: #AAB2BD; }
     footer div.footer-social a:hover {
-      color: #48CFAD; }
+      color: #656D78; }
 
 /*# sourceMappingURL=main.css.map */

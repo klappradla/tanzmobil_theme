@@ -2,23 +2,24 @@ header {
 
   #car {
     display: block;
-    padding: 5% 0;
+    padding: 40px 0 20px;
     margin: 0 auto;
-    width: 100px;
+    width: 150px;
   }
 
   nav { 
     margin: 0 auto;
-    padding: 0 0 5%;
+    padding: 20px 0 20px;
     text-align: center;
     font-family: $font-headline;
+    border-top: 1px solid $gray-light;
 
     a {
       position: relative;
       display: inline-block;
-      margin: 0 0.5em;
+      margin: 0 0.5rem;
       outline: none;
-      color: $color-font-light;
+      color: $gray-dark;
       text-decoration: none;
       text-transform: lowercase;
 
@@ -28,7 +29,7 @@ header {
         left: 0;
         width: 100%;
         height: 1px;
-        background: $color-font-light;
+        background: $gray-dark;
         content: '';
         opacity: 0;
         -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
