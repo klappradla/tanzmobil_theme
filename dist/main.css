@@ -155,6 +155,8 @@ body {
   font-family: "Roboto", sans-serif;
   color: #434A54;
   background-color: #ffffff; }
+  body main {
+    padding-top: 20px; }
 
 .post {
   margin: auto;
@@ -186,6 +188,9 @@ body {
     .post .post-content img {
       width: 100%;
       height: auto; }
+
+.page p {
+  margin-bottom: 1.5rem; }
 
 .interviews .interview a {
   text-decoration: none; }
