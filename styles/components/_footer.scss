@@ -1,13 +1,22 @@
 footer {
   color: $color-font-light;
   
-  div.footer-copywrite {
+  div.footer {
     margin-top: 40px;
     margin-bottom: 0;
     border-top: 1px solid #CCD1D9;
     text-align: right;
     font-size: 0.75rem;
     color: $gray-medium;
+
+    span.copywrite {
+      @include breakpoint(ml) {
+        opacity: 0;
+      }
+      @include breakpoint(mp) {
+        opacity: 0;
+      }
+    }
   }
 
   div.footer-social {
