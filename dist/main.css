@@ -196,6 +196,35 @@ body {
     font-size: 1.15rem;
     margin-bottom: 1.5rem; }
 
+#theater {
+  padding-left: 20px;
+  font-size: 1.25rem; }
+  #theater .question, #theater .post .post-content h2, .post .post-content #theater h2 {
+    font-weight: 400;
+    padding-bottom: 10px; }
+  #theater .answer, #theater .post .post-content p, .post .post-content #theater p {
+    font-weight: 300; }
+
+.contact {
+  padding-top: 40px; }
+  .contact i {
+    color: #AAB2BD; }
+  .contact table {
+    margin-left: auto;
+    margin-right: auto; }
+  .contact th {
+    text-transform: lowercase;
+    padding-bottom: 0.5rem; }
+  .contact td {
+    vertical-align: top;
+    padding-right: 0.5rem;
+    padding-bottom: 0.25rem; }
+    .contact td a {
+      text-decoration: none;
+      color: #48CFAD; }
+      .contact td a:hover {
+        color: #434A54; }
+
 .interviews .interview a {
   text-decoration: none; }
 .interviews .interview figure {

@@ -1,0 +1,47 @@
+#theater {
+
+  padding-left: 20px;
+  font-size: 1.25rem;
+
+  .question {
+    font-weight: 400;
+    padding-bottom: 10px;
+  }
+
+  .answer {
+    font-weight: 300;
+  }
+}
+
+.contact {
+  padding-top: 40px;
+
+  i {
+    color: $gray-medium;
+  }
+
+  table {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  th {
+    text-transform: lowercase;
+    padding-bottom: 0.5rem;
+  }
+
+  td {
+    vertical-align: top;
+    padding-right: 0.5rem;
+    padding-bottom: 0.25rem;
+
+    a {
+      text-decoration: none;
+      color: $green;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+}

@@ -38,8 +38,7 @@ angular
         controller: 'PostCtrl'
       })
       .when('/contact', {
-        templateUrl: CONFIG.ROOT_URL + 'views/page.html',
-        controller: 'PageCtrl'
+        templateUrl: CONFIG.ROOT_URL + 'views/contact.html'
       })
       .otherwise({
         redirectTo: '/'
