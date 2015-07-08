@@ -6,8 +6,14 @@
     padding-right: 10px;
 
     p {
-      font-size: 1.15rem;
+      //font-size: 1.15rem;
+      font-family: $font-serif;
       margin-bottom: 1.5rem;
+    }
+
+    b {
+      font-family: $font-main;
+      font-weight: 400;
     }
   }
 }

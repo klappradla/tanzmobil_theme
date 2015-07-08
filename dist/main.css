@@ -154,7 +154,8 @@ html {
 body {
   font-family: "Roboto", sans-serif;
   color: #434A54;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  font-weight: 300; }
 
 div.page-section {
   margin-top: 40px; }
@@ -201,8 +202,11 @@ div.page-section {
   padding-left: 10px;
   padding-right: 10px; }
   .page .page-content p {
-    font-size: 1.15rem;
+    font-family: "Roboto Slab", serif;
     margin-bottom: 1.5rem; }
+  .page .page-content b {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400; }
 
 #theater {
   padding: 20px;
