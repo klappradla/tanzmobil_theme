@@ -4,7 +4,10 @@ div.home {
     padding-top: 40px;
     padding-bottom: 40px;
     //padding: 10% 0;
-    background-color: $green-alpha;
+    //background-color: $green-alpha;
+    background-image: url('../images/map.jpg');
+    background-size: auto;
+    //background: radial-gradient(yellow, #009966, purple);
 
     div.title {
       margin-right: 30%;
