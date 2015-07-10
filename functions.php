@@ -71,3 +71,4 @@ function ae_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'ae_scripts' );
+add_theme_support( 'post-thumbnails' );
