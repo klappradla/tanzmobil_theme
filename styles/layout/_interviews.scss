@@ -1,100 +1,197 @@
 .interviews {
   .interview {
-
-    a {
-      text-decoration: none;
-    }
-
     figure {
       position: relative;
-      overflow: hidden;
-      margin: 0;
-      height: 200px;
-      background-color: rgba(255,0,0,0.5);
+      height: 280px;
 
       img {
-        filter: grayscale(1);
-        opacity: 0.3;
-        width: -webkit-calc(100%);
-        width: calc(100%);
-        height: 200px;
+        padding: 5px;
+        width: 100%;
+        height: 50%;
         object-fit: cover;
+        border-radius: 10px;
+        -webkit-transition: all 0.75s ease;
+        -moz-transition: all 0.75s ease;
+        -o-transition: all 0.75s ease;
+        -ms-transition: all 0.75s ease;
+        transition: all 0.75s ease;
+
+        &:hover {
+          -webkit-transform:scale(1.025);
+        }
       }
 
       figcaption {
-        text-transform: lowercase;
+        margin-left: 10px;
+        margin-right: 10px;
 
-        h2 {
-          position: absolute;
-          text-align: center;
-          top: 70%;
-          left: 0;
-          width: 100%;
-          padding: 0 0.25em;
-          color: $color-font-white;
-          font-weight: 300;
-          -webkit-transition: -webkit-transform 0.35s, color 0.35s;
-          transition: transform 0.35s, color 0.35s;
-          -webkit-transform: translate3d(0,-50%,0);
-          transform: translate3d(0,-50%,0);
+        ul {
+          list-style: none;
+          color: $black-alpha;
+          font-size: 0.75rem;
+          text-transform: lowercase;
+          font-family: $font-headline;
+          font-weight: 500;
+
+          li {
+            display: inline;
+
+            a {
+              text-decoration: none;
+              color: $black-alpha;
+            }
+          }
         }
 
-        p {
-          position: absolute;
-          width: 100%;
-          opacity: 0;
-          width: 100%;
-          padding: 0 0.25em;
+        .post-link {
+          text-decoration: none;
+          color: $black;
+          -webkit-transition: all 0.75s ease;
+          -moz-transition: all 0.75s ease;
+          -o-transition: all 0.75s ease;
+          -ms-transition: all 0.75s ease;
+          transition: all 0.75s ease;
+
+          &:hover {
+            zoom: 105%;
+          }
+        }
+
+        h2 {
+          //text-align: center;
+          text-transform: uppercase;
+          font-family: $font-headline;
           font-weight: 400;
-          font-size: 0.85em;
+          font-size: 1.25rem;
+          //color: $black;
+          padding-bottom: 5px;
+          padding-top: 5px;
         }
 
         p.post-meta {
-          bottom: 0;
-          left: 0;
-          text-align: center;
-          padding-bottom: 0.25em;
-          color: $color-font-light;
-          -webkit-transform: translate3d(0,10px,0);
-          transform: translate3d(0,10px,0);
-
-          // span {
-          //   &:nth-child(1) {
-          //     float: left;
-          //     text-align: left;
-          //   }
-          //   &:nth-child(2) {
-          //     float: right;
-          //     text-align: right;
-          //   }
-          // }
+          font-size: 0.8rem;
         }
 
         p.post-category {
-          color: rgba(255, 0, 0, 0.498039);
+          position: absolute;
           top: 0;
+          right: 0;
           text-align: right;
-          -webkit-transform: translate3d(0,-20px,0);
-          transform: translate3d(0,-20px,0);
-        }
-      }
+          padding-top: 5px;
+          padding-right: 7px;
 
-      &:hover {
-        background-color: #fff !important;
-        opacity: 1;
-
-        figcaption h2 {
-          color: $color-font-light;
-          -webkit-transform: translate3d(0,-50%,0) translate3d(0,-30px,0);
-          transform: translate3d(0,-50%,0) translate3d(0,-30px,0);
+          a {
+            text-decoration: none;
+            color: inherit;
+          }
+          //width: 100%;
         }
 
-        figcaption p {
-          opacity: 1;
-          -webkit-transform: translate3d(0,0,0);
-          transform: translate3d(0,0,0);
+        p.post-date {
+          padding-top: 5px;
+          font-size: 0.75rem;
+          font-family: $font-headline;
+          color: $black-alpha;
+          font-weight: 500;
         }
       }
     }
   }
+
+  //   a {
+  //     text-decoration: none;
+  //   }
+
+  //   figure {
+  //     position: relative;
+  //     overflow: hidden;
+  //     margin: 0;
+  //     height: 200px;
+  //     background-color: rgba(255,0,0,0.5);
+
+  //     img {
+  //       filter: grayscale(1);
+  //       opacity: 0.3;
+  //       width: -webkit-calc(100%);
+  //       width: calc(100%);
+  //       height: 200px;
+  //       object-fit: cover;
+  //     }
+
+  //     figcaption {
+  //       text-transform: lowercase;
+
+  //       h2 {
+  //         position: absolute;
+  //         text-align: center;
+  //         top: 70%;
+  //         left: 0;
+  //         width: 100%;
+  //         padding: 0 0.25em;
+  //         color: $color-font-white;
+  //         font-weight: 300;
+  //         -webkit-transition: -webkit-transform 0.35s, color 0.35s;
+  //         transition: transform 0.35s, color 0.35s;
+  //         -webkit-transform: translate3d(0,-50%,0);
+  //         transform: translate3d(0,-50%,0);
+  //       }
+
+  //       p {
+  //         position: absolute;
+  //         width: 100%;
+  //         opacity: 0;
+  //         width: 100%;
+  //         padding: 0 0.25em;
+  //         font-weight: 400;
+  //         font-size: 0.85em;
+  //       }
+
+  //       p.post-meta {
+  //         bottom: 0;
+  //         left: 0;
+  //         text-align: center;
+  //         padding-bottom: 0.25em;
+  //         color: $color-font-light;
+  //         -webkit-transform: translate3d(0,10px,0);
+  //         transform: translate3d(0,10px,0);
+
+  //         // span {
+  //         //   &:nth-child(1) {
+  //         //     float: left;
+  //         //     text-align: left;
+  //         //   }
+  //         //   &:nth-child(2) {
+  //         //     float: right;
+  //         //     text-align: right;
+  //         //   }
+  //         // }
+  //       }
+
+  //       p.post-category {
+  //         color: rgba(255, 0, 0, 0.498039);
+  //         top: 0;
+  //         text-align: right;
+  //         -webkit-transform: translate3d(0,-20px,0);
+  //         transform: translate3d(0,-20px,0);
+  //       }
+  //     }
+
+  //     &:hover {
+  //       background-color: #fff !important;
+  //       opacity: 1;
+
+  //       figcaption h2 {
+  //         color: $color-font-light;
+  //         -webkit-transform: translate3d(0,-50%,0) translate3d(0,-30px,0);
+  //         transform: translate3d(0,-50%,0) translate3d(0,-30px,0);
+  //       }
+
+  //       figcaption p {
+  //         opacity: 1;
+  //         -webkit-transform: translate3d(0,0,0);
+  //         transform: translate3d(0,0,0);
+  //       }
+  //     }
+  //   }
+  // }
 }

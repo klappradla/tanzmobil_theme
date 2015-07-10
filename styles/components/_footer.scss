@@ -9,14 +9,14 @@ footer {
     font-size: 0.75rem;
     color: $gray-medium;
 
-    span.copywrite {
-      @include breakpoint(ml) {
-        opacity: 0;
-      }
-      @include breakpoint(mp) {
-        opacity: 0;
-      }
-    }
+    // span.copywrite {
+    //   @include breakpoint(ml) {
+    //     opacity: 0;
+    //   }
+    //   @include breakpoint(mp) {
+    //     opacity: 0;
+    //   }
+    // }
   }
 
   div.footer-social {

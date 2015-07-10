@@ -256,13 +256,23 @@ angular.module('tanzmobil')
   });;'use strict';
 
 angular.module('tanzmobil')
+  .filter('dateToISO', function () {
+    return function(input) {
+      input = new Date(input).toISOString();
+      return input;
+    };
+  });;'use strict';
+
+angular.module('tanzmobil')
   .service('categoryColor', function () {
     function getColor(category, alpha) {
       alpha = alpha || false;
       switch(category) {
         case 'german':
           if (alpha) {
-            return 'rgba(237,85,101,0.5)';  
+            //return 'rgba(237,85,101,0.5)';  
+            
+            return 'rgba(93,156,236,0.5)';
           }
           return '#ED5565';
         case 'english':
