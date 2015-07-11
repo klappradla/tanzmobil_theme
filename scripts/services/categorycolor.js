@@ -7,9 +7,8 @@ angular.module('tanzmobil')
       switch(category) {
         case 'german':
           if (alpha) {
-            return 'rgba(237,85,101,0.5)';  
-
-            //return 'rgba(93,156,236,0.5)';
+            //return 'rgba(237,85,101,0.5)';
+            return 'rgba(252,110,81,0.5)';
           }
           return '#ED5565';
         case 'english':
