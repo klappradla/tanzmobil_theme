@@ -1,4 +1,4 @@
-div.page-section {
+div.section-header {
   margin-top: 40px;;
 
   h2 {
@@ -8,4 +8,9 @@ div.page-section {
     text-transform: lowercase;
     color: $color-font-main;
   }
+}
+
+.section-content {
+  padding: 10px;
+  background-color: $gray-light-alpha;
 }

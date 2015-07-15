@@ -14,7 +14,17 @@ html {
 
 body {
   font-family: $font-main;
-  color: $color-font-main;
+  color: $black;
   background-color: #ffffff;
   font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: $green;
+  font-weight: 400;
+
+  &:hover {
+    color: $black;
+  }
 }
