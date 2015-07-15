@@ -410,9 +410,11 @@ footer {
         color: #AAB2BD; }
       footer div.footer-social a:hover {
         color: #656D78; }
-  footer div.footer-copywrite {
+  footer div.footer-imprint {
     font-size: 0.75rem;
     margin-bottom: 80px; }
+    footer div.footer-imprint span:nth-child(2) {
+      margin-left: 10px; }
 
 div.section-header {
   margin-top: 40px; }

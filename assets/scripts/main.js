@@ -29,6 +29,10 @@ angular
         templateUrl: CONFIG.ROOT_URL + 'assets/views/page.html',
         controller: 'PageCtrl'
       })
+      .when('/imprint', {
+        templateUrl: CONFIG.ROOT_URL + 'assets/views/page.html',
+        controller: 'PageCtrl'
+      })
       .when('/interviews', {
         templateUrl: CONFIG.ROOT_URL + 'assets/views/interviews.html',
         controller: 'InterviewsCtrl'
@@ -51,6 +55,24 @@ angular.module('tanzmobil')
     ];
   });
 ;'use strict';
+
+angular.module('tanzmobil')
+  .controller('FooterCtrl', function ($scope, $routeParams, $sce, WpService) {
+    $scope.currentDate = new Date();
+
+    // WpService.post($routeParams.post).then(function(response) {
+    //   $scope.post = response;
+    //   $scope.postContent = $sce.trustAsHtml($scope.post.content);
+    // });
+
+    // function reading() {
+    //   return true;
+    // };
+
+    // return {
+    //   reading: reading
+    // }
+  });;'use strict';
 
 angular.module('tanzmobil')
   .controller('HomeCtrl', function ($scope, WpService) {
@@ -192,6 +214,22 @@ angular.module('tanzmobil')
     };
   });
 ;'use strict';
+angular.module('tanzmobil')
+  .directive('footerImprint', function(CONFIG) {
+    return {
+      restrict: 'E',
+      replace: true,
+      templateUrl: CONFIG.ROOT_URL + 'assets/views/footerimprint.html'
+    }
+  });'use strict';
+angular.module('tanzmobil')
+  .directive('footerSocial', function(CONFIG) {
+    return {
+      restrict: 'E',
+      replace: true,
+      templateUrl: CONFIG.ROOT_URL + 'assets/views/footersocial.html'
+    }
+  });'use strict';
 angular.module('tanzmobil')
   .directive('interviewTeaser', function(CONFIG) {
     return {

@@ -29,6 +29,10 @@ angular
         templateUrl: CONFIG.ROOT_URL + 'assets/views/page.html',
         controller: 'PageCtrl'
       })
+      .when('/imprint', {
+        templateUrl: CONFIG.ROOT_URL + 'assets/views/page.html',
+        controller: 'PageCtrl'
+      })
       .when('/interviews', {
         templateUrl: CONFIG.ROOT_URL + 'assets/views/interviews.html',
         controller: 'InterviewsCtrl'
