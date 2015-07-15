@@ -10,7 +10,7 @@
 <body ng-app="tanzmobil" class="i-container">
 
 	<header class="i-g">
-    <object car id="car" type="image/svg+xml" data="<?php echo get_bloginfo('template_url') ?>/images/car.svg">Your browser does not support SVG</object>
+    <object car id="car" type="image/svg+xml" data="<?php echo get_bloginfo('template_url') ?>/assets/images/car.svg">Your browser does not support SVG</object>
     <nav ng-controller="NavCtrl as nav" class="i-12">
       <a ng-class="{ active: nav.isActive('/') }" href="/">Home</a>
       <a ng-class="{ active: nav.isActive('/about')}" href="/about">About</a>

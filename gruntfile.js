@@ -5,7 +5,8 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         files: {
-          'dist/main.css' : 'styles/main.scss'
+          //'dist/main.css' : 'styles/main.scss'
+          'assets/styles/main.css' : 'src/styles/main.scss'
         }
       }
     },
@@ -17,9 +18,10 @@ module.exports = function(grunt) {
       },
       dist: {
         // the files to concatenate
-        src: ['scripts/**/*.js'],
+        src: ['src/scripts/**/*.js'],
         // the location of the resulting JS file
-        dest: 'dist/main.js'
+        //dest: 'dist/main.js'
+        dest: 'assets/scripts/main.js'
       }
     },
     watch: {
@@ -38,6 +40,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
 
-  grunt.registerTask('default',['watch']);
   grunt.registerTask('build',['sass', 'concat']);
+  grunt.registerTask('default',['build', 'watch']);
 }

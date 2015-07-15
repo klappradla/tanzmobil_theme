@@ -18,27 +18,27 @@ angular
     $locationProvider.html5Mode(true);
     $routeProvider
       .when('/', {
-        templateUrl: CONFIG.ROOT_URL + 'views/home.html',
+        templateUrl: CONFIG.ROOT_URL + 'assets/views/home.html',
         controller: 'HomeCtrl'
       })
       .when('/news', {
-        templateUrl: CONFIG.ROOT_URL + 'views/page.html',
+        templateUrl: CONFIG.ROOT_URL + 'assets/views/page.html',
         controller: 'PageCtrl'
       })
       .when('/about', {
-        templateUrl: CONFIG.ROOT_URL + 'views/page.html',
+        templateUrl: CONFIG.ROOT_URL + 'assets/views/page.html',
         controller: 'PageCtrl'
       })
       .when('/interviews', {
-        templateUrl: CONFIG.ROOT_URL + 'views/interviews.html',
+        templateUrl: CONFIG.ROOT_URL + 'assets/views/interviews.html',
         controller: 'InterviewsCtrl'
       })
       .when('/interviews/:post', {
-        templateUrl: CONFIG.ROOT_URL + 'views/post.html',
+        templateUrl: CONFIG.ROOT_URL + 'assets/views/post.html',
         controller: 'PostCtrl'
       })
       .when('/contact', {
-        templateUrl: CONFIG.ROOT_URL + 'views/contact.html'
+        templateUrl: CONFIG.ROOT_URL + 'assets/views/contact.html'
       })
       .otherwise({
         redirectTo: '/'
@@ -199,7 +199,7 @@ angular.module('tanzmobil')
   .directive('interviewTeaser', function(CONFIG) {
     return {
       restrict: 'E',
-      templateUrl: CONFIG.ROOT_URL + 'views/interviewteaser.html',
+      templateUrl: CONFIG.ROOT_URL + 'assets/views/interviewteaser.html',
       controller: 'TeaserCtrl',
       controllerAs: 'teaser'
     }

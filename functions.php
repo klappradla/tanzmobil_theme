@@ -13,53 +13,53 @@ function ae_scripts() {
 	// Vendor
 	wp_register_script(
 		'angularjs',
-		get_stylesheet_directory_uri() . '/bower_components/angular/angular.min.js'
+		get_stylesheet_directory_uri() . '/assets/bower_components/angular/angular.min.js'
 	);
 
 	wp_register_script(
 		'angularjs-route',
-		get_stylesheet_directory_uri() . '/bower_components/angular-route/angular-route.min.js'
+		get_stylesheet_directory_uri() . '/assets/bower_components/angular-route/angular-route.min.js'
 	);
 
 	wp_register_script(
 		'angularjs-sanitize',
-		get_stylesheet_directory_uri() . '/bower_components/angular-sanitize/angular-sanitize.min.js'
+		get_stylesheet_directory_uri() . '/assets/bower_components/angular-sanitize/angular-sanitize.min.js'
 	);
 
 	wp_register_script(
 		'angularjs-resource',
-		get_stylesheet_directory_uri() . '/bower_components/angular-resource/angular-resource.min.js'
+		get_stylesheet_directory_uri() . '/assets/bower_components/angular-resource/angular-resource.min.js'
 	);
 
 	wp_register_script(
 		'angularjs-touch',
-		get_stylesheet_directory_uri() . '/bower_components/angular-touch/angular-touch.min.js'
+		get_stylesheet_directory_uri() . '/assets/bower_components/angular-touch/angular-touch.min.js'
 	);
 
 	wp_register_script(
 		'jquery',
-		get_stylesheet_directory_uri() . '/bower_components/jquery/dist/jquery.min.js'
+		get_stylesheet_directory_uri() . '/assets/bower_components/jquery/dist/jquery.min.js'
 	);
 
 	wp_register_script(
 		'snap.svg',
-		get_stylesheet_directory_uri() . '/bower_components/snap.svg/dist/snap.svg-min.js'
+		get_stylesheet_directory_uri() . '/assets/bower_components/snap.svg/dist/snap.svg-min.js'
 	);
 
 	wp_register_script(
 		'theaterjs',
-		get_stylesheet_directory_uri() . '/bower_components/theaterjs/build/theater.min.js'
+		get_stylesheet_directory_uri() . '/assets/bower_components/theaterjs/build/theater.min.js'
 	);
 
 	// App script
 	wp_enqueue_script(
 		'tmJS',
-		get_template_directory_uri() . '/dist/main.js',
+		get_template_directory_uri() . '/assets/scripts/main.js',
 		array( 'jquery', 'snap.svg', 'theaterjs', 'angularjs', 'angularjs-route', 'angularjs-sanitize', 'angularjs-resource', 'angularjs-touch' )
 	);
 
 	// Load custom styles
-	wp_enqueue_style( 'tmCSS', get_template_directory_uri() . '/dist/main.css');
+	wp_enqueue_style( 'tmCSS', get_template_directory_uri() . '/assets/styles/main.css');
 
 	// Variables for app script
 	wp_localize_script( 'tmJS', 'config',
