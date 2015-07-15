@@ -15,7 +15,7 @@ angular
   })
   .config(function ($routeProvider, $locationProvider, CONFIG) {
 
-    //$locationProvider.html5Mode(true).hashPrefix('!');
+    $locationProvider.html5Mode(true);
     $routeProvider
       .when('/', {
         templateUrl: CONFIG.ROOT_URL + 'views/home.html',
