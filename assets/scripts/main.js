@@ -39,9 +39,6 @@ angular
       })
       .when('/contact', {
         templateUrl: CONFIG.ROOT_URL + 'assets/views/contact.html'
-      })
-      .otherwise({
-        redirectTo: '/'
       });
   });'use strict';
 

@@ -157,15 +157,6 @@ body {
   background-color: #ffffff;
   font-weight: 300; }
 
-div.page-section {
-  margin-top: 40px; }
-  div.page-section h2 {
-    font-size: 1rem;
-    font-weight: 300;
-    font-family: "Raleway", sans-serif;
-    text-transform: lowercase;
-    color: #434A54; }
-
 .post {
   margin: auto;
   padding: 0 4em; }
@@ -415,5 +406,14 @@ footer {
   footer div.footer-copywrite {
     font-size: 0.75rem;
     margin-bottom: 80px; }
+
+div.page-section {
+  margin-top: 40px; }
+  div.page-section h2 {
+    font-size: 1rem;
+    font-weight: 300;
+    font-family: "Raleway", sans-serif;
+    text-transform: lowercase;
+    color: #434A54; }
 
 /*# sourceMappingURL=main.css.map */
