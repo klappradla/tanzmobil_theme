@@ -33,13 +33,29 @@ module.exports = function(grunt) {
         files: 'scripts/**/*.js',
         tasks: ['concat']
       }
+    },
+    copy: {
+      main: {
+        expand: true,
+        src: ['*.php', 'style.css'],
+        dest: 'theme/',
+        filter: 'isFile'
+      },
+      assets: {
+        expand: true,
+        src: ['assets/**'],
+        dest: 'theme/',
+        filter: 'isFile'
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   grunt.registerTask('build',['sass', 'concat']);
   grunt.registerTask('default',['build', 'watch']);
+  grunt.registerTask('deploy', ['build', 'copy']);
 }
