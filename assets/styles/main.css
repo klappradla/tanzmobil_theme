@@ -424,6 +424,10 @@ div.section-header {
     font-family: "Raleway", sans-serif;
     text-transform: lowercase;
     color: #434A54; }
+    div.section-header h2 span {
+      font-weight: 500;
+      font-style: italic;
+      color: #48CFAD; }
 
 .section-content {
   padding: 10px;

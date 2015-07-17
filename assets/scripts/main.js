@@ -37,6 +37,14 @@ angular
         templateUrl: CONFIG.ROOT_URL + 'assets/views/interviews.html',
         controller: 'InterviewsCtrl'
       })
+      .when('/interviews/category/:category', {
+        templateUrl: CONFIG.ROOT_URL + 'assets/views/interviews.html',
+        controller: 'InterviewsCtrl'
+      })
+      .when('/interviews/tag/:tag', {
+        templateUrl: CONFIG.ROOT_URL + 'assets/views/interviews.html',
+        controller: 'InterviewsCtrl'
+      })
       .when('/interviews/:post', {
         templateUrl: CONFIG.ROOT_URL + 'assets/views/post.html',
         controller: 'PostCtrl'
@@ -87,12 +95,33 @@ angular.module('tanzmobil')
   });;'use strict';
 
 angular.module('tanzmobil')
-  .controller('InterviewsCtrl', function ($scope, WpService) {
+  .controller('InterviewsCtrl', function ($scope, $routeParams, WpService) {
+    console.log($routeParams);
 
-    WpService.allPosts().then(function(response) {
-      $scope.posts = response;
-      console.log($scope.posts);
-    });
+    $scope.posts = [];
+    $scope.headline = ['All Interviews', '']
+
+    $scope.init = function() {
+      if (typeof $routeParams.tag !== 'undefined') {
+        // post by tag
+      } else if (typeof $routeParams.category !== 'undefined') {
+        WpService.postsByCategory($routeParams.category).then(function(response) {
+          $scope.posts = response;
+        });
+        $scope.headline = ['Interviews of Category:', $routeParams.category];
+        // post by category
+      } else if (typeof $routeParams.searchTerm !== 'undefined') {
+        // posts by fulltext search
+      } else {
+        // all posts
+        WpService.allPosts().then(function(response) {
+          $scope.posts = response;
+        });
+        $scope.headline = ['All Interviews', ''];
+      }
+    };
+
+    $scope.init();
   });
 ;'use strict';
 

@@ -37,6 +37,14 @@ angular
         templateUrl: CONFIG.ROOT_URL + 'assets/views/interviews.html',
         controller: 'InterviewsCtrl'
       })
+      .when('/interviews/category/:category', {
+        templateUrl: CONFIG.ROOT_URL + 'assets/views/interviews.html',
+        controller: 'InterviewsCtrl'
+      })
+      .when('/interviews/tag/:tag', {
+        templateUrl: CONFIG.ROOT_URL + 'assets/views/interviews.html',
+        controller: 'InterviewsCtrl'
+      })
       .when('/interviews/:post', {
         templateUrl: CONFIG.ROOT_URL + 'assets/views/post.html',
         controller: 'PostCtrl'

@@ -7,6 +7,12 @@ div.section-header {
     font-family: $font-headline;
     text-transform: lowercase;
     color: $color-font-main;
+
+    span {
+      font-weight: 500;
+      font-style: italic;
+      color: $green;
+    }
   }
 }
 
