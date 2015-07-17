@@ -444,19 +444,18 @@ div.section-header {
     outline: none;
     border: none;
     width: 300px;
-    border-bottom: 1px solid #AAB2BD;
+    border-bottom: 1px solid #CCD1D9;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 1rem;
-    display: inline;
-    vertical-align: top; }
+    display: inline; }
   .search-form button {
     border: none;
+    padding-bottom: 2px;
     background: none;
     color: #AAB2BD;
-    font-size: 1.5rem;
+    font-size: 1rem;
     display: inline; }
-    vertical-align:top
     .search-form button:hover {
       cursor: pointer;
       color: #434A54; }
