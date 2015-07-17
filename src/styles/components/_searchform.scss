@@ -1,0 +1,35 @@
+.search-form {
+  float: right;
+
+  input {
+    outline: none;
+    border: none;
+    width: 300px;
+    border-bottom: 1px solid $gray-medium;
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: 1rem;
+    display: inline;
+    vertical-align:top
+  }
+
+  button {
+    border: none;
+    background: none;
+    color: $gray-medium;
+    font-size: 1.5rem;
+    display: inline;
+    vertical-align:top
+
+    &:hover {
+      cursor: pointer;
+      color: $black;
+    }
+  }
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

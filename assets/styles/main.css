@@ -427,7 +427,8 @@ div.section-header {
     font-weight: 300;
     font-family: "Raleway", sans-serif;
     text-transform: lowercase;
-    color: #434A54; }
+    color: #434A54;
+    display: inline; }
     div.section-header h2 span {
       font-weight: 500;
       font-style: italic;
@@ -436,5 +437,32 @@ div.section-header {
 .section-content {
   padding: 10px;
   background-color: rgba(204, 209, 217, 0.5); }
+
+.search-form {
+  float: right; }
+  .search-form input {
+    outline: none;
+    border: none;
+    width: 300px;
+    border-bottom: 1px solid #AAB2BD;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    display: inline;
+    vertical-align: top; }
+  .search-form button {
+    border: none;
+    background: none;
+    color: #AAB2BD;
+    font-size: 1.5rem;
+    display: inline; }
+    vertical-align:top
+    .search-form button:hover {
+      cursor: pointer;
+      color: #434A54; }
+  .search-form:after {
+    content: "";
+    display: table;
+    clear: both; }
 
 /*# sourceMappingURL=main.css.map */

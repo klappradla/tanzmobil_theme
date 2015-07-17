@@ -1,9 +1,9 @@
 <div class="i-g interviews">
-  <div class="i-12">
-    <search-form searchCallback="search(term)"></search-form>
-  </div>
-  <div class="i-12 section-header">
+  <div class="i-6 section-header">
     <h2>{{ headline[0] }} <span ng-show="{{ headline[1].length }}">{{ headline[1] }}</span></h2>
+  </div>
+  <div class="i-6 section-header">
+    <search-form searchCallback="search(term)"></search-form>
   </div>
   <div ng-repeat="post in posts"  class="i-3 i-mp-4 i-ml-2 i-tp-2 i-tl-1 interview">
     <interview-teaser></interview-teaser>
