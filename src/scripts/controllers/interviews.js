@@ -2,12 +2,11 @@
 
 angular.module('tanzmobil')
   .controller('InterviewsCtrl', function ($scope, $routeParams, WpService) {
-    console.log($routeParams);
-
+    var ctrl = this;
     $scope.posts = [];
-    $scope.headline = ['All Interviews', '']
+    $scope.headline = ['All Interviews']
 
-    $scope.init = function() {
+    ctrl.initPosts = function() {
       if (typeof $routeParams.tag !== 'undefined') {
         // post by tag
         WpService.postsByTag($routeParams.tag).then(function(response) {
@@ -22,6 +21,10 @@ angular.module('tanzmobil')
         $scope.headline = ['Interviews of Category:', $routeParams.category];
       } else if (typeof $routeParams.searchTerm !== 'undefined') {
         // posts by fulltext search
+        WpService.postsByTerm($routeParams.searchTerm).then(function(response) {
+          $scope.posts = response;
+        });
+        $scope.headline = ['Search:', $routeParams.searchTerm];
       } else {
         // all posts
         WpService.allPosts().then(function(response) {
@@ -31,5 +34,5 @@ angular.module('tanzmobil')
       }
     };
 
-    $scope.init();
+    ctrl.initPosts();
   });

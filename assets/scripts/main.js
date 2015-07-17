@@ -45,6 +45,10 @@ angular
         templateUrl: CONFIG.ROOT_URL + 'assets/views/interviews.html',
         controller: 'InterviewsCtrl'
       })
+      .when('/interviews/search/:searchTerm', {
+        templateUrl: CONFIG.ROOT_URL + 'assets/views/interviews.html',
+        controller: 'InterviewsCtrl'
+      })
       .when('/interviews/:post', {
         templateUrl: CONFIG.ROOT_URL + 'assets/views/post.html',
         controller: 'PostCtrl'
@@ -53,16 +57,6 @@ angular
         templateUrl: CONFIG.ROOT_URL + 'assets/views/contact.html'
       });
   });'use strict';
-
-angular.module('tanzmobil')
-  .controller('AboutCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
-;'use strict';
 
 angular.module('tanzmobil')
   .controller('FooterCtrl', function ($scope, $routeParams, $sce, WpService) {
@@ -96,12 +90,11 @@ angular.module('tanzmobil')
 
 angular.module('tanzmobil')
   .controller('InterviewsCtrl', function ($scope, $routeParams, WpService) {
-    console.log($routeParams);
-
+    var ctrl = this;
     $scope.posts = [];
-    $scope.headline = ['All Interviews', '']
+    $scope.headline = ['All Interviews']
 
-    $scope.init = function() {
+    ctrl.initPosts = function() {
       if (typeof $routeParams.tag !== 'undefined') {
         // post by tag
         WpService.postsByTag($routeParams.tag).then(function(response) {
@@ -116,6 +109,10 @@ angular.module('tanzmobil')
         $scope.headline = ['Interviews of Category:', $routeParams.category];
       } else if (typeof $routeParams.searchTerm !== 'undefined') {
         // posts by fulltext search
+        WpService.postsByTerm($routeParams.searchTerm).then(function(response) {
+          $scope.posts = response;
+        });
+        $scope.headline = ['Search:', $routeParams.searchTerm];
       } else {
         // all posts
         WpService.allPosts().then(function(response) {
@@ -125,7 +122,7 @@ angular.module('tanzmobil')
       }
     };
 
-    $scope.init();
+    ctrl.initPosts();
   });
 ;'use strict';
 
@@ -166,9 +163,6 @@ angular.module('tanzmobil')
     // }
   });
 ;'use strict';
-angular.module('tanzmobil')
-  .controller('TeaserCtrl', function() {
-  });;'use strict';
 
 angular.module('tanzmobil')
   .directive('backgroundColor', function (categoryColor) {
@@ -252,7 +246,7 @@ angular.module('tanzmobil')
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: CONFIG.ROOT_URL + 'assets/views/footerimprint.html'
+      templateUrl: CONFIG.ROOT_URL + 'assets/views/components/footerimprint.html'
     }
   });'use strict';
 angular.module('tanzmobil')
@@ -260,16 +254,14 @@ angular.module('tanzmobil')
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: CONFIG.ROOT_URL + 'assets/views/footersocial.html'
+      templateUrl: CONFIG.ROOT_URL + 'assets/views/components/footersocial.html'
     }
   });'use strict';
 angular.module('tanzmobil')
   .directive('interviewTeaser', function(CONFIG) {
     return {
       restrict: 'E',
-      templateUrl: CONFIG.ROOT_URL + 'assets/views/interviewteaser.html',
-      controller: 'TeaserCtrl',
-      controllerAs: 'teaser'
+      templateUrl: CONFIG.ROOT_URL + 'assets/views/components/interviewteaser.html'
     }
   });'use strict';
 
@@ -415,6 +407,13 @@ angular.module('tanzmobil')
         });      
     }
 
+    function postsByTerm(searchTerm) {
+      return queryApi('get_search_results/?search=' + searchTerm)
+        .then(function(response) {
+          return response.data.posts;
+        });      
+    }
+
     function queryApi(url) {
       return $http
         .get(apiUrl + url, { cache: true })
@@ -429,7 +428,8 @@ angular.module('tanzmobil')
       page: page,
       post: post,
       postsByCategory: postsByCategory,
-      postsByTag: postsByTag
+      postsByTag: postsByTag,
+      postsByTerm: postsByTerm,
     };
 
   });

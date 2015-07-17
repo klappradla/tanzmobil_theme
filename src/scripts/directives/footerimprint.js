@@ -4,6 +4,6 @@ angular.module('tanzmobil')
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: CONFIG.ROOT_URL + 'assets/views/footerimprint.html'
+      templateUrl: CONFIG.ROOT_URL + 'assets/views/components/footerimprint.html'
     }
   })

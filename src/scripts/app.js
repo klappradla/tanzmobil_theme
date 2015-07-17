@@ -45,6 +45,10 @@ angular
         templateUrl: CONFIG.ROOT_URL + 'assets/views/interviews.html',
         controller: 'InterviewsCtrl'
       })
+      .when('/interviews/search/:searchTerm', {
+        templateUrl: CONFIG.ROOT_URL + 'assets/views/interviews.html',
+        controller: 'InterviewsCtrl'
+      })
       .when('/interviews/:post', {
         templateUrl: CONFIG.ROOT_URL + 'assets/views/post.html',
         controller: 'PostCtrl'
