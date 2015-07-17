@@ -6,7 +6,7 @@
 
     <ul class="tags">
       <li ng-repeat="tag in post.tags">
-        <a href="">{{ tag.slug }}</a>
+        <a href="/interviews/tag/{{ tag.slug }}">{{ tag.slug }}</a>
         <span ng-hide="{{ $last }}">|</span>
       </li>
     </ul>

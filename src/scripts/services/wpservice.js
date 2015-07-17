@@ -42,6 +42,13 @@ angular.module('tanzmobil')
         });      
     }
 
+    function postsByTag(slug) {
+      return queryApi('get_tag_posts/?tag_slug=' + slug)
+        .then(function(response) {
+          return response.data.posts;
+        });      
+    }
+
     function queryApi(url) {
       return $http
         .get(apiUrl + url, { cache: true })
@@ -55,7 +62,8 @@ angular.module('tanzmobil')
       recentPosts: recentPosts,
       page: page,
       post: post,
-      postsByCategory: postsByCategory
+      postsByCategory: postsByCategory,
+      postsByTag: postsByTag
     };
 
   });

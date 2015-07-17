@@ -104,12 +104,16 @@ angular.module('tanzmobil')
     $scope.init = function() {
       if (typeof $routeParams.tag !== 'undefined') {
         // post by tag
+        WpService.postsByTag($routeParams.tag).then(function(response) {
+          $scope.posts = response;
+        });
+        $scope.headline = ['Interviews tagged:', $routeParams.tag];
       } else if (typeof $routeParams.category !== 'undefined') {
+        // post by category
         WpService.postsByCategory($routeParams.category).then(function(response) {
           $scope.posts = response;
         });
         $scope.headline = ['Interviews of Category:', $routeParams.category];
-        // post by category
       } else if (typeof $routeParams.searchTerm !== 'undefined') {
         // posts by fulltext search
       } else {
@@ -117,7 +121,7 @@ angular.module('tanzmobil')
         WpService.allPosts().then(function(response) {
           $scope.posts = response;
         });
-        $scope.headline = ['All Interviews', ''];
+        $scope.headline = ['All Interviews'];
       }
     };
 
@@ -404,6 +408,13 @@ angular.module('tanzmobil')
         });      
     }
 
+    function postsByTag(slug) {
+      return queryApi('get_tag_posts/?tag_slug=' + slug)
+        .then(function(response) {
+          return response.data.posts;
+        });      
+    }
+
     function queryApi(url) {
       return $http
         .get(apiUrl + url, { cache: true })
@@ -417,7 +428,8 @@ angular.module('tanzmobil')
       recentPosts: recentPosts,
       page: page,
       post: post,
-      postsByCategory: postsByCategory
+      postsByCategory: postsByCategory,
+      postsByTag: postsByTag
     };
 
   });

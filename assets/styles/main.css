@@ -273,6 +273,8 @@ a {
         .interviews .interview figure figcaption ul li a {
           text-decoration: none;
           color: rgba(67, 74, 84, 0.5); }
+          .interviews .interview figure figcaption ul li a:hover {
+            color: #434A54; }
     .interviews .interview figure figcaption .post-link {
       text-decoration: none;
       color: #434A54;
@@ -302,6 +304,8 @@ a {
       .interviews .interview figure figcaption p.post-category a {
         text-decoration: none;
         color: inherit; }
+        .interviews .interview figure figcaption p.post-category a:hover {
+          zoom: 105%; }
     .interviews .interview figure figcaption p.post-date {
       padding-top: 5px;
       font-size: 0.75rem;

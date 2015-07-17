@@ -10,12 +10,16 @@ angular.module('tanzmobil')
     $scope.init = function() {
       if (typeof $routeParams.tag !== 'undefined') {
         // post by tag
+        WpService.postsByTag($routeParams.tag).then(function(response) {
+          $scope.posts = response;
+        });
+        $scope.headline = ['Interviews tagged:', $routeParams.tag];
       } else if (typeof $routeParams.category !== 'undefined') {
+        // post by category
         WpService.postsByCategory($routeParams.category).then(function(response) {
           $scope.posts = response;
         });
         $scope.headline = ['Interviews of Category:', $routeParams.category];
-        // post by category
       } else if (typeof $routeParams.searchTerm !== 'undefined') {
         // posts by fulltext search
       } else {
@@ -23,7 +27,7 @@ angular.module('tanzmobil')
         WpService.allPosts().then(function(response) {
           $scope.posts = response;
         });
-        $scope.headline = ['All Interviews', ''];
+        $scope.headline = ['All Interviews'];
       }
     };
 
