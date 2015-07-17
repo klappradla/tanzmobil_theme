@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tanzmobil')
-  .controller('InterviewsCtrl', function ($scope, $routeParams, WpService) {
+  .controller('InterviewsCtrl', function ($scope, $routeParams, $location, WpService) {
     var ctrl = this;
     $scope.posts = [];
     $scope.headline = ['All Interviews']
@@ -33,6 +33,11 @@ angular.module('tanzmobil')
         $scope.headline = ['All Interviews'];
       }
     };
+
+    $scope.search = function(term) {
+      console.log("call search");
+      $location.path('/interviews/search/' + term);
+    }
 
     ctrl.initPosts();
   });

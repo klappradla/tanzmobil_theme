@@ -52,7 +52,10 @@ angular.module('tanzmobil')
     function postsByTerm(searchTerm) {
       return queryApi('get_search_results/?search=' + searchTerm)
         .then(function(response) {
-          return response.data.posts;
+          var posts = response.data.posts;
+
+          console.log(response.data);
+          return posts.filter(filterForPostType);
         });      
     }
 
@@ -62,6 +65,10 @@ angular.module('tanzmobil')
         .then(function(response) {
           return response;
         });
+    }
+
+    function filterForPostType(post) {
+      return post['type'] === 'post';
     }
 
     return {

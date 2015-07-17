@@ -89,7 +89,7 @@ angular.module('tanzmobil')
   });;'use strict';
 
 angular.module('tanzmobil')
-  .controller('InterviewsCtrl', function ($scope, $routeParams, WpService) {
+  .controller('InterviewsCtrl', function ($scope, $routeParams, $location, WpService) {
     var ctrl = this;
     $scope.posts = [];
     $scope.headline = ['All Interviews']
@@ -121,6 +121,11 @@ angular.module('tanzmobil')
         $scope.headline = ['All Interviews'];
       }
     };
+
+    $scope.search = function(term) {
+      console.log("call search");
+      $location.path('/interviews/search/' + term);
+    }
 
     ctrl.initPosts();
   });
@@ -262,6 +267,21 @@ angular.module('tanzmobil')
     return {
       restrict: 'E',
       templateUrl: CONFIG.ROOT_URL + 'assets/views/components/interviewteaser.html'
+    }
+  });'use strict';
+angular.module('tanzmobil')
+  .directive('searchForm', function(CONFIG) {
+    return {
+      restrict: 'E',
+      replace: true,
+      templateUrl: CONFIG.ROOT_URL + 'assets/views/components/searchform.html',
+      link: function(scope, element) {
+        console.log(scope);
+        scope.submitSearch = function() {
+          console.log(scope.searchInput);
+          scope.search(scope.searchInput);
+        };
+      }
     }
   });'use strict';
 
@@ -410,7 +430,10 @@ angular.module('tanzmobil')
     function postsByTerm(searchTerm) {
       return queryApi('get_search_results/?search=' + searchTerm)
         .then(function(response) {
-          return response.data.posts;
+          var posts = response.data.posts;
+
+          console.log(response.data);
+          return posts.filter(filterForPostType);
         });      
     }
 
@@ -420,6 +443,10 @@ angular.module('tanzmobil')
         .then(function(response) {
           return response;
         });
+    }
+
+    function filterForPostType(post) {
+      return post['type'] === 'post';
     }
 
     return {
