@@ -6,6 +6,7 @@ angular.module('tanzmobil')
       $scope.post = response;
       $scope.postDate = new Date($scope.post.date).toISOString();
       $scope.postContent = $sce.trustAsHtml($scope.post.content);
+      $scope.postExcerpt = $sce.trustAsHtml($scope.post.excerpt);
     });
 
     // function reading() {

@@ -12,7 +12,7 @@
       </ul>
     </div>
     <div class="post-info">
-      <p class="post-description">{{ post.custom_fields.description[0] }}</p>
+      <p ng-bind-html="post.excerpt" class="post-description"></p>
     </div>
     <p class="post-meta">
       <span>

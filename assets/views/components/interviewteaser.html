@@ -13,7 +13,7 @@
 
     <a class="post-link" href="/interviews/{{ post.slug }}">
       <h2>{{ post.title }}</h2>
-      <p ng-show="{{ post.custom_fields.description[0].length }}" class="post-meta">{{ post.custom_fields.description[0] | limitTo: 100 }}...</p>
+      <p ng-bind-html="post.excerpt | limitTo: 100" class="post-meta"></p>
     </a>
     <p class="post-category" font-color="{{ post.categories[0].slug }}">
       <a href="/interviews/category/{{ post.categories[0].slug }}"><i class="fa fa-flag"></i> {{ post.categories[0].slug }}</a>

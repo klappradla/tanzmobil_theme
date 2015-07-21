@@ -184,6 +184,7 @@ angular.module('tanzmobil')
       $scope.post = response;
       $scope.postDate = new Date($scope.post.date).toISOString();
       $scope.postContent = $sce.trustAsHtml($scope.post.content);
+      $scope.postExcerpt = $sce.trustAsHtml($scope.post.excerpt);
     });
 
     // function reading() {
@@ -390,6 +391,15 @@ angular.module('tanzmobil')
     return function(input) {
       console.log(input);
       input = new Date(input).toISOString();
+      return input;
+    };
+  });;'use strict';
+
+angular.module('tanzmobil')
+  .filter('trustAsHtml', function ($sce) {
+    return function(input) {
+      console.log(input);
+      input = $sce.trustAsHtml(input);
       return input;
     };
   });;'use strict';
