@@ -1,9 +1,27 @@
 <article class="post">
 
   <section class="post-header">
-    <h2 class="post-title">{{ post.title }}</h2>
-    <p class="post-description">{{ post.custom_fields.description[0] }}<p>
-    <p class="post-meta">{{ post.custom_fields.place[0] }} - {{ post.custom_fields.date[0] }}</p>
+    <div class="post-info">
+      <h2 class="post-title">{{ post.title }}</h2>
+      <ul ng-show="post.tags.length > 0"class="tags">
+        <li><i class="fa fa-tags"></i></li>
+        <li ng-repeat="tag in post.tags">
+          <a href="/interviews/tag/{{ tag.slug }}">{{ tag.slug }}</a>
+          <span ng-hide="{{ $last }}">|</span>
+        </li>
+      </ul>
+    </div>
+    <div class="post-info">
+      <p class="post-description">{{ post.custom_fields.description[0] }}</p>
+    </div>
+    <p class="post-meta">
+      <span>
+        <a href="/interviews/author/{{ post.author.nickname }}">
+          <i class="fa fa-user"></i> {{ post.author.nickname }}
+        </a>
+      </span>
+      <span><i class="fa fa-calendar-o"></i> {{ postDate | date:'dd.MM.yyyy' }}</span>
+    </p>
   </section>
 
   <div ng-bind-html="postContent" class="post-content"></div>

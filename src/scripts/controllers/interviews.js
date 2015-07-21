@@ -18,9 +18,15 @@ angular.module('tanzmobil')
         WpService.postsByCategory($routeParams.category).then(function(response) {
           $scope.posts = response;
         });
-        $scope.headline = ['Interviews of Category:', $routeParams.category];
+        $scope.headline = ['Interviews of Category:', $routeParams.author];
+      } else if (typeof $routeParams.author !== 'undefined') {
+        // post by category
+        WpService.postsByAuthor($routeParams.author).then(function(response) {
+          $scope.posts = response;
+        });
+        $scope.headline = ['Interviews by:', $routeParams.author];
       } else if (typeof $routeParams.searchTerm !== 'undefined') {
-        // posts by fulltext search
+        // posts by author
         WpService.postsByTerm($routeParams.searchTerm).then(function(response) {
           $scope.posts = response;
         });
@@ -29,6 +35,8 @@ angular.module('tanzmobil')
         // all posts
         WpService.allPosts().then(function(response) {
           $scope.posts = response;
+
+          console.log($scope.posts);
         });
         $scope.headline = ['All Interviews'];
       }

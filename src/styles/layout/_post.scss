@@ -6,33 +6,57 @@
     text-align: center;
     margin-bottom: 60px;
 
+    .post-info {
+      margin-bottom: 20px;
+    }
+
     .post-title {
       font-weight: 900;
-      font-size: 5rem;
-      line-height: 5rem;
-      margin-bottom: 0.5em;
+      font-size: 3rem;
+      line-height: 3rem;
     }
 
     .post-description {
       font-weight: 500;
       font-size: 1.5rem;
-      margin: 0 1em;
+    }
+
+    .tags {
+      list-style: none;
+      color: $black-alpha;
+      text-transform: lowercase;
+      font-family: $font-headline;
+
+      li {
+        display: inline;
+
+        a {
+          text-decoration: none;
+          color: $black-alpha;
+
+          &:hover {
+            color: $black;
+          }
+        }
+      }
     }
 
     .post-meta {
-      font-weight: 400;
+      span:first-of-type {
+        margin-right: 1em;
+      }
     }
   }
 
   .question {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 0.5em;
     margin-top: 1.5em;
   }
 
   .answer {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     margin-bottom: 0.5em;
   }
 

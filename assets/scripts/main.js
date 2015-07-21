@@ -45,6 +45,10 @@ angular
         templateUrl: CONFIG.ROOT_URL + 'assets/views/interviews.html',
         controller: 'InterviewsCtrl'
       })
+      .when('/interviews/author/:author', {
+        templateUrl: CONFIG.ROOT_URL + 'assets/views/interviews.html',
+        controller: 'InterviewsCtrl'
+      })
       .when('/interviews/search/:searchTerm', {
         templateUrl: CONFIG.ROOT_URL + 'assets/views/interviews.html',
         controller: 'InterviewsCtrl'
@@ -106,9 +110,15 @@ angular.module('tanzmobil')
         WpService.postsByCategory($routeParams.category).then(function(response) {
           $scope.posts = response;
         });
-        $scope.headline = ['Interviews of Category:', $routeParams.category];
+        $scope.headline = ['Interviews of Category:', $routeParams.author];
+      } else if (typeof $routeParams.author !== 'undefined') {
+        // post by category
+        WpService.postsByAuthor($routeParams.author).then(function(response) {
+          $scope.posts = response;
+        });
+        $scope.headline = ['Interviews by:', $routeParams.author];
       } else if (typeof $routeParams.searchTerm !== 'undefined') {
-        // posts by fulltext search
+        // posts by author
         WpService.postsByTerm($routeParams.searchTerm).then(function(response) {
           $scope.posts = response;
         });
@@ -117,6 +127,8 @@ angular.module('tanzmobil')
         // all posts
         WpService.allPosts().then(function(response) {
           $scope.posts = response;
+
+          console.log($scope.posts);
         });
         $scope.headline = ['All Interviews'];
       }
@@ -156,6 +168,7 @@ angular.module('tanzmobil')
   .controller('PostCtrl', function ($scope, $routeParams, $sce, WpService) {
     WpService.post($routeParams.post).then(function(response) {
       $scope.post = response;
+      $scope.postDate = new Date($scope.post.date).toISOString();
       $scope.postContent = $sce.trustAsHtml($scope.post.content);
     });
 
@@ -353,6 +366,7 @@ angular.module('tanzmobil')
 angular.module('tanzmobil')
   .filter('dateToISO', function () {
     return function(input) {
+      console.log(input);
       input = new Date(input).toISOString();
       return input;
     };
@@ -449,7 +463,17 @@ angular.module('tanzmobil')
 
           console.log(response.data);
           return posts.filter(filterForPostType);
-        });      
+        });
+    }
+
+    function postsByAuthor(slug) {      
+      return queryApi('get_author_posts/?slug=' + slug)
+        .then(function(response) {
+          var posts = response.data.posts;
+
+          console.log(response.data);
+          return posts.filter(filterForPostType);
+        });
     }
 
     function queryApi(url) {
@@ -472,6 +496,7 @@ angular.module('tanzmobil')
       postsByCategory: postsByCategory,
       postsByTag: postsByTag,
       postsByTerm: postsByTerm,
+      postsByAuthor: postsByAuthor
     };
 
   });
