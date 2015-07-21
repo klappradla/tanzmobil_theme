@@ -16,6 +16,12 @@ angular
   .config(function ($routeProvider, $locationProvider, CONFIG) {
 
     $locationProvider.html5Mode(true);
+
+    var redirect = function(skip, url) {
+      console.log("Redirecting to ", url);
+      window.location.href = url
+    };
+
     $routeProvider
       .when('/', {
         templateUrl: CONFIG.ROOT_URL + 'assets/views/home.html',
@@ -59,6 +65,9 @@ angular
       })
       .when('/contact', {
         templateUrl: CONFIG.ROOT_URL + 'assets/views/contact.html'
+      })
+      .otherwise({
+        redirectTo: redirect
       });
   });'use strict';
 

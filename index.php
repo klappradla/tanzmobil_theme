@@ -12,11 +12,10 @@
 	<header class="i-g">
     <object car id="car" type="image/svg+xml" data="<?php echo get_bloginfo('template_url') ?>/assets/images/car.svg">Your browser does not support SVG</object>
     <nav ng-controller="NavCtrl as nav" class="i-12">
-      <a ng-class="{ active: nav.isActive('/') }" href="/">Home</a>
-      <a ng-class="{ active: nav.isActive('/about')}" href="/about">About</a>
-      <a ng-class="{ active: nav.isActive('/news')}" href="/news">News</a>
-      <a ng-class="{ active: nav.isActive('/interviews') }" href="/interviews">Interviews</a>
-      <a ng-class="{ active: nav.isActive('/contact')}" href="/contact">Contact</a>
+      <a ng-class="{ active: nav.isActive('/') }" ng-href="/">Home</a>
+      <a ng-class="{ active: nav.isActive('/about')}" ng-href="/about">About</a>
+      <a ng-class="{ active: nav.isActive('/interviews') }" ng-href="/interviews">Interviews</a>
+      <a ng-class="{ active: nav.isActive('/contact')}" ng-href="/contact">Contact</a>
     </nav>
   </header>
 
