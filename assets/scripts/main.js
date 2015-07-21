@@ -153,6 +153,11 @@ angular.module('tanzmobil')
 ;'use strict';
 
 angular.module('tanzmobil')
+  .controller('MainCtrl', function ($scope, CONFIG) {
+    $scope.rootUrl = CONFIG.ROOT_URL;
+  });;'use strict';
+
+angular.module('tanzmobil')
   .controller('NavCtrl', function ($scope, $location) {
     
     function isActive(view) {

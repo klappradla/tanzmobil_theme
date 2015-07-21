@@ -254,6 +254,12 @@ a {
   .contact p {
     margin: 20px; }
 
+.logo {
+  padding: 40px; }
+
+div.fixed-height {
+  height: 180px; }
+
 .interviews .interview figure {
   position: relative;
   height: 280px; }

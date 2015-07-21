@@ -7,7 +7,7 @@
   <base href="/">
 	<?php wp_head();?>
 </head>
-<body ng-app="tanzmobil" class="i-container">
+<body ng-app="tanzmobil" ng-controller="MainCtrl" class="i-container">
 
 	<header class="i-g">
     <object car id="car" type="image/svg+xml" data="<?php echo get_bloginfo('template_url') ?>/assets/images/car.svg">Your browser does not support SVG</object>
