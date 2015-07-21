@@ -1,0 +1,41 @@
+.newsletter-form {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+
+  p {
+    font-weight: 400;
+    text-transform: lowercase;
+  }
+
+  input {
+    outline: none;
+    border: none;
+    width: 150px;
+    background: none;
+    border-bottom: 1px solid $gray-light;
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: 1rem;
+    display: inline;
+  }
+
+  button {
+    border: none;
+    padding-bottom: 2px;
+    background: none;
+    color: $green;
+    font-size: 1rem;
+    display: inline;
+    &:hover {
+      cursor: pointer;
+      color: $black;
+    }
+  }
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
