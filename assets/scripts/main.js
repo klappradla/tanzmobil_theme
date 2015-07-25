@@ -396,6 +396,13 @@ angular.module('tanzmobil')
   });;'use strict';
 
 angular.module('tanzmobil')
+  .filter('htmlToPlain', function () {
+    return function(text) {
+      return angular.element(text).text();
+    };
+  });;'use strict';
+
+angular.module('tanzmobil')
   .filter('trustAsHtml', function ($sce) {
     return function(input) {
       console.log(input);

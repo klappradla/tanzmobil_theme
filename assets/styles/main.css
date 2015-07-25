@@ -268,7 +268,7 @@ div.fixed-height {
 
 .interviews .interview figure {
   position: relative;
-  height: 280px; }
+  height: 300px; }
   .interviews .interview figure img {
     padding: 5px;
     width: 100%;
@@ -301,18 +301,17 @@ div.fixed-height {
       text-decoration: none;
       color: #434A54; }
       .interviews .interview figure figcaption .post-link:hover {
-        zoom: 105%; }
+        text-decoration: underline; }
     .interviews .interview figure figcaption h2 {
       text-transform: uppercase;
-      font-family: "Raleway", sans-serif;
       font-weight: 400;
-      font-size: 20px;
-      font-size: 1.25rem;
+      font-size: 16px;
+      font-size: 1rem;
       padding-bottom: 5px;
       padding-top: 5px; }
     .interviews .interview figure figcaption p.post-meta {
       font-size: 12px;
-      font-size: 0.8rem; }
+      font-size: 0.75rem; }
     .interviews .interview figure figcaption p.post-category {
       position: absolute;
       top: 0;
@@ -324,7 +323,7 @@ div.fixed-height {
         text-decoration: none;
         color: inherit; }
         .interviews .interview figure figcaption p.post-category a:hover {
-          zoom: 105%; }
+          text-decoration: underline; }
     .interviews .interview figure figcaption p.post-date {
       padding-top: 5px;
       font-size: 12px;
