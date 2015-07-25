@@ -42,10 +42,5 @@ angular.module('tanzmobil')
       }
     };
 
-    $scope.search = function(term) {
-      console.log("call search");
-      $location.path('/interviews/search/' + term);
-    }
-
     ctrl.initPosts();
   });
