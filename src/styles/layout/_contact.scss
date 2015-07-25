@@ -15,6 +15,7 @@
 
 .contact {
   background-color: $gray-light-alpha;
+  margin-bottom: 20px !important;
 
   i {
     color: $gray-medium;
@@ -56,9 +57,24 @@
 }
 
 .logo {
-  padding: 40px;
+  padding: 20px;
+  height: 100%;
+  object-fit: scale-down;
 }
 
 div.fixed-height {
-  height: 180px;
+  height: 180px;  
+
+  @include breakpoint(tp) {
+    //margin-right: 20%;
+  }
+
+  @include breakpoint(ml) {
+    height: 250px;
+    //margin-right: 20px;
+  }
+
+  @include breakpoint(mp) {
+    //margin-right: 20px;
+  }
 }

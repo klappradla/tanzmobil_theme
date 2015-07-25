@@ -231,7 +231,8 @@ a {
     font-weight: 300; }
 
 .contact {
-  background-color: rgba(204, 209, 217, 0.5); }
+  background-color: rgba(204, 209, 217, 0.5);
+  margin-bottom: 20px !important; }
   .contact i {
     color: #AAB2BD; }
   .contact table {
@@ -261,10 +262,15 @@ a {
     margin: 20px; }
 
 .logo {
-  padding: 40px; }
+  padding: 20px;
+  height: 100%;
+  object-fit: scale-down; }
 
 div.fixed-height {
   height: 180px; }
+  @media (min-width: 321px) and (max-width: 480px) {
+    div.fixed-height {
+      height: 250px; } }
 
 .interviews .interview {
   margin-bottom: 20px; }
