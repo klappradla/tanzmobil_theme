@@ -10,14 +10,10 @@
         height: 50%;
         object-fit: cover;
         border-radius: 10px;
-        -webkit-transition: all 0.75s ease;
-        -moz-transition: all 0.75s ease;
-        -o-transition: all 0.75s ease;
-        -ms-transition: all 0.75s ease;
         transition: all 0.75s ease;
 
         &:hover {
-          -webkit-transform:scale(1.025);
+          transform: scale(1.025);
         }
       }
 
@@ -50,11 +46,6 @@
         .post-link {
           text-decoration: none;
           color: $black;
-          -webkit-transition: all 0.75s ease;
-          -moz-transition: all 0.75s ease;
-          -o-transition: all 0.75s ease;
-          -ms-transition: all 0.75s ease;
-          transition: all 0.75s ease;
 
           &:hover {
             zoom: 105%;

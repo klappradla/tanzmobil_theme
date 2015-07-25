@@ -24,10 +24,23 @@ module.exports = function(grunt) {
         dest: 'assets/scripts/main.js'
       }
     },
+    postcss: {
+      options: {
+        map: true, // inline sourcemaps
+        processors: [
+          require('pixrem')(), // add fallbacks for rem units
+          require('autoprefixer-core')({browsers: 'last 2 versions'}), // add vendor prefixes
+          //require('cssnano')() // minify the result
+        ]
+      },
+      dist: {
+        src: 'assets/styles/*.css'
+      }
+    },
     watch: {
       css: {
         files: 'src/styles/**/*.scss',
-        tasks: ['sass']
+        tasks: ['sass', 'postcss']
       },
       js: {
         files: 'src/scripts/**/*.js',
@@ -54,8 +67,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-postcss');
 
-  grunt.registerTask('build',['sass', 'concat']);
+  grunt.registerTask('build',['sass', 'concat', 'postcss']);
   grunt.registerTask('default',['build', 'watch']);
   grunt.registerTask('deploy', ['build', 'copy']);
 }

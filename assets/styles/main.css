@@ -14,16 +14,12 @@
 .i-g {
   clear: both;
   -ms-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 .i-g > div {
   margin: 0.5208333333333334% 1.0416666666666667%;
   float: left;
   -ms-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 .i-g .i-0 {
@@ -174,10 +170,13 @@ a {
       margin-bottom: 20px; }
     .post .post-header .post-title {
       font-weight: 900;
+      font-size: 48px;
       font-size: 3rem;
+      line-height: 48px;
       line-height: 3rem; }
     .post .post-header .post-description {
       font-weight: 500;
+      font-size: 24px;
       font-size: 1.5rem; }
     .post .post-header .tags {
       list-style: none;
@@ -194,11 +193,13 @@ a {
     .post .post-header .post-meta span:first-of-type {
       margin-right: 1em; }
   .post .question, .post .post-content h2 {
+    font-size: 20px;
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 0.5em;
     margin-top: 1.5em; }
   .post .answer, .post .post-content p {
+    font-size: 18px;
     font-size: 1.15rem;
     margin-bottom: 0.5em; }
   .post .post-content {
@@ -213,6 +214,7 @@ a {
   padding-right: 10px; }
   .page .page-content p {
     font-family: "Roboto Slab", serif;
+    margin-bottom: 24px;
     margin-bottom: 1.5rem; }
   .page .page-content b {
     font-family: "Roboto", sans-serif;
@@ -220,6 +222,7 @@ a {
 
 #theater {
   padding: 20px;
+  font-size: 20px;
   font-size: 1.25rem; }
   #theater .question, #theater .post .post-content h2, .post .post-content #theater h2 {
     font-weight: 400;
@@ -238,11 +241,14 @@ a {
     margin-bottom: 20px; }
   .contact th {
     text-transform: lowercase;
+    padding-bottom: 8px;
     padding-bottom: 0.5rem;
     font-weight: 400; }
   .contact td {
     vertical-align: top;
+    padding-right: 8px;
     padding-right: 0.5rem;
+    padding-bottom: 4px;
     padding-bottom: 0.25rem;
     font-weight: 300; }
     .contact td a {
@@ -269,19 +275,17 @@ div.fixed-height {
     height: 50%;
     object-fit: cover;
     border-radius: 10px;
-    -webkit-transition: all 0.75s ease;
-    -moz-transition: all 0.75s ease;
-    -o-transition: all 0.75s ease;
-    -ms-transition: all 0.75s ease;
     transition: all 0.75s ease; }
     .interviews .interview figure img:hover {
-      -webkit-transform: scale(1.025); }
+      -webkit-transform: scale(1.025);
+              transform: scale(1.025); }
   .interviews .interview figure figcaption {
     margin-left: 10px;
     margin-right: 10px; }
     .interviews .interview figure figcaption ul {
       list-style: none;
       color: rgba(67, 74, 84, 0.5);
+      font-size: 12px;
       font-size: 0.75rem;
       text-transform: lowercase;
       font-family: "Raleway", sans-serif;
@@ -295,22 +299,19 @@ div.fixed-height {
             color: #434A54; }
     .interviews .interview figure figcaption .post-link {
       text-decoration: none;
-      color: #434A54;
-      -webkit-transition: all 0.75s ease;
-      -moz-transition: all 0.75s ease;
-      -o-transition: all 0.75s ease;
-      -ms-transition: all 0.75s ease;
-      transition: all 0.75s ease; }
+      color: #434A54; }
       .interviews .interview figure figcaption .post-link:hover {
         zoom: 105%; }
     .interviews .interview figure figcaption h2 {
       text-transform: uppercase;
       font-family: "Raleway", sans-serif;
       font-weight: 400;
+      font-size: 20px;
       font-size: 1.25rem;
       padding-bottom: 5px;
       padding-top: 5px; }
     .interviews .interview figure figcaption p.post-meta {
+      font-size: 12px;
       font-size: 0.8rem; }
     .interviews .interview figure figcaption p.post-category {
       position: absolute;
@@ -326,6 +327,7 @@ div.fixed-height {
           zoom: 105%; }
     .interviews .interview figure figcaption p.post-date {
       padding-top: 5px;
+      font-size: 12px;
       font-size: 0.75rem;
       font-family: "Raleway", sans-serif;
       color: rgba(67, 74, 84, 0.5);
@@ -346,15 +348,19 @@ div.home div#jumbo {
     div.home div#jumbo div.title h1 {
       font-weight: 200;
       margin: 0;
+      font-size: 80px;
       font-size: 5rem;
+      line-height: 80px;
       line-height: 5rem; }
     div.home div#jumbo div.title p {
       margin: 0;
+      font-size: 32px;
       font-size: 2rem;
       color: #5D9CEC; }
 div.home div.recent-interviews {
   margin-top: 5%; }
   div.home div.recent-interviews h2 {
+    font-size: 16px;
     font-size: 1rem;
     font-weight: 300;
     font-family: "Raleway", sans-serif;
@@ -380,6 +386,7 @@ header nav {
   header nav a {
     position: relative;
     display: inline-block;
+    margin: 0 8px;
     margin: 0 0.5rem;
     outline: none;
     color: #656D78;
@@ -394,24 +401,20 @@ header nav {
       background: #656D78;
       content: '';
       opacity: 0;
-      -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
-      -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+      transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
       transition: height 0.3s, opacity 0.3s, transform 0.3s;
       -webkit-transform: translateY(-10px);
-      -moz-transform: translateY(-10px);
-      transform: translateY(-10px); }
+              transform: translateY(-10px); }
     header nav a:hover::after, header nav a:focus::after {
       height: 3px;
       opacity: 1;
       -webkit-transform: translateY(0px);
-      -moz-transform: translateY(0px);
-      transform: translateY(0px); }
+              transform: translateY(0px); }
   header nav a.active::after {
     height: 3px;
     opacity: 1;
     -webkit-transform: translateY(0px);
-    -moz-transform: translateY(0px);
-    transform: translateY(0px); }
+            transform: translateY(0px); }
 
 footer {
   text-align: center;
@@ -420,6 +423,7 @@ footer {
     margin-top: 40px;
     margin-bottom: 0;
     text-align: right;
+    font-size: 12px;
     font-size: 0.75rem;
     color: #AAB2BD; }
   footer div.footer-social {
@@ -433,6 +437,7 @@ footer {
       footer div.footer-social a:hover {
         color: #656D78; }
   footer div.footer-imprint {
+    font-size: 12px;
     font-size: 0.75rem;
     margin-bottom: 80px; }
     footer div.footer-imprint span:nth-child(2) {
@@ -441,6 +446,7 @@ footer {
 div.section-header {
   margin-top: 40px; }
   div.section-header h2 {
+    font-size: 16px;
     font-size: 1rem;
     font-weight: 300;
     font-family: "Raleway", sans-serif;
@@ -465,6 +471,7 @@ div.section-header {
     border-bottom: 1px solid #CCD1D9;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
+    font-size: 16px;
     font-size: 1rem;
     display: inline; }
   .search-form button {
@@ -472,6 +479,7 @@ div.section-header {
     padding-bottom: 2px;
     background: none;
     color: #AAB2BD;
+    font-size: 16px;
     font-size: 1rem;
     display: inline; }
     .search-form button:hover {
@@ -497,6 +505,7 @@ div.section-header {
     border-bottom: 1px solid #CCD1D9;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
+    font-size: 16px;
     font-size: 1rem;
     display: inline; }
   .newsletter-form button {
@@ -504,6 +513,7 @@ div.section-header {
     padding-bottom: 2px;
     background: none;
     color: #48CFAD;
+    font-size: 16px;
     font-size: 1rem;
     display: inline; }
     .newsletter-form button:hover {
