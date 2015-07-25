@@ -16,6 +16,6 @@
     <p class="post-category" font-color="{{ post.categories[0].slug }}">
       <a href="/interviews/category/{{ post.categories[0].slug }}"><i class="fa fa-flag"></i> {{ post.categories[0].slug }}</a>
     </p>
-    <p class="post-date">{{ post.date |dateToISO | date:'dd.MM.yyyy' }}</p>
+    <p class="post-date">{{ post.date | dateToISO }}</p>
   </figcaption>     
 </figure>

@@ -2,9 +2,14 @@
 
 angular.module('tanzmobil')
   .filter('dateToISO', function () {
+
+    function parseDate(s) {
+      var b = s.split('-');
+      return b[2] + '.' + b[1] + '.' + b[0]
+    }
+
     return function(input) {
-      console.log(input);
-      input = new Date(input).toISOString();
-      return input;
+      input = input.substr(0, input.indexOf(' '))
+      return parseDate(input);;
     };
   });
