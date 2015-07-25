@@ -91,7 +91,7 @@ angular.module('tanzmobil')
 
 angular.module('tanzmobil')
   .controller('HomeCtrl', function ($scope, WpService) {
-    WpService.recentPosts(2).then(function (response) {
+    WpService.recentPosts(6).then(function (response) {
       console.log(response);
       $scope.posts = response;
     });

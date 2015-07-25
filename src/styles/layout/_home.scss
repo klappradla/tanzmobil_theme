@@ -16,12 +16,33 @@ div.home {
       font-family: $font-headline;
       font-weight: 200;
 
+      @include breakpoint(tp) {
+        margin-right: 20%;
+      }
+
+      @include breakpoint(ml) {
+        margin-right: 20px;
+      }
+
+      @include breakpoint(mp) {
+        margin-right: 20px;
+      }
+
       h1 {
         font-weight: 200;
-        //padding: 0;
         margin: 0;
         font-size: 5rem;
-        line-height: 5rem;
+        line-height: 5rem;        
+
+        @include breakpoint(ml) {          
+          font-size: 4rem;
+          line-height: 4rem;  
+        }
+
+        @include breakpoint(mp) {
+          font-size: 3rem;
+          line-height: 3rem;  
+        }
       }
 
       p {

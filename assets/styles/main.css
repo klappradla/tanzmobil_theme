@@ -266,71 +266,76 @@ a {
 div.fixed-height {
   height: 180px; }
 
-.interviews .interview figure {
-  position: relative;
-  height: 300px; }
-  .interviews .interview figure img {
-    padding: 5px;
-    width: 100%;
-    height: 50%;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: all 0.75s ease; }
-    .interviews .interview figure img:hover {
-      -webkit-transform: scale(1.025);
-              transform: scale(1.025); }
-  .interviews .interview figure figcaption {
-    margin-left: 10px;
-    margin-right: 10px; }
-    .interviews .interview figure figcaption ul {
-      list-style: none;
-      color: rgba(67, 74, 84, 0.5);
-      font-size: 12px;
-      font-size: 0.75rem;
-      text-transform: lowercase;
-      font-family: "Raleway", sans-serif;
-      font-weight: 500; }
-      .interviews .interview figure figcaption ul li {
-        display: inline; }
-        .interviews .interview figure figcaption ul li a {
-          text-decoration: none;
-          color: rgba(67, 74, 84, 0.5); }
-          .interviews .interview figure figcaption ul li a:hover {
-            color: #434A54; }
-    .interviews .interview figure figcaption .post-link {
-      text-decoration: none;
-      color: #434A54; }
-      .interviews .interview figure figcaption .post-link:hover {
-        text-decoration: underline; }
-    .interviews .interview figure figcaption h2 {
-      text-transform: uppercase;
-      font-weight: 400;
-      font-size: 16px;
-      font-size: 1rem;
-      padding-bottom: 5px;
-      padding-top: 5px; }
-    .interviews .interview figure figcaption p.post-meta {
-      font-size: 12px;
-      font-size: 0.75rem; }
-    .interviews .interview figure figcaption p.post-category {
-      position: absolute;
-      top: 0;
-      right: 0;
-      text-align: right;
-      padding-top: 5px;
-      padding-right: 7px; }
-      .interviews .interview figure figcaption p.post-category a {
+.interviews .interview {
+  margin-bottom: 20px; }
+  .interviews .interview figure {
+    position: relative;
+    height: 300px; }
+    .interviews .interview figure img {
+      padding: 5px;
+      width: 100%;
+      height: 50%;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: all 0.75s ease; }
+      .interviews .interview figure img:hover {
+        -webkit-transform: scale(1.025);
+                transform: scale(1.025); }
+      @media (min-width: 481px) and (max-width: 768px) {
+        .interviews .interview figure img {
+          height: 45%; } }
+    .interviews .interview figure figcaption {
+      margin-left: 10px;
+      margin-right: 10px; }
+      .interviews .interview figure figcaption ul {
+        list-style: none;
+        color: rgba(67, 74, 84, 0.5);
+        font-size: 12px;
+        font-size: 0.75rem;
+        text-transform: lowercase;
+        font-family: "Raleway", sans-serif;
+        font-weight: 500; }
+        .interviews .interview figure figcaption ul li {
+          display: inline; }
+          .interviews .interview figure figcaption ul li a {
+            text-decoration: none;
+            color: rgba(67, 74, 84, 0.5); }
+            .interviews .interview figure figcaption ul li a:hover {
+              color: #434A54; }
+      .interviews .interview figure figcaption .post-link {
         text-decoration: none;
-        color: inherit; }
-        .interviews .interview figure figcaption p.post-category a:hover {
+        color: #434A54; }
+        .interviews .interview figure figcaption .post-link:hover {
           text-decoration: underline; }
-    .interviews .interview figure figcaption p.post-date {
-      padding-top: 5px;
-      font-size: 12px;
-      font-size: 0.75rem;
-      font-family: "Raleway", sans-serif;
-      color: rgba(67, 74, 84, 0.5);
-      font-weight: 500; }
+      .interviews .interview figure figcaption h2 {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 16px;
+        font-size: 1rem;
+        padding-bottom: 5px;
+        padding-top: 5px; }
+      .interviews .interview figure figcaption p.post-meta {
+        font-size: 12px;
+        font-size: 0.75rem; }
+      .interviews .interview figure figcaption p.post-category {
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: right;
+        padding-top: 5px;
+        padding-right: 7px; }
+        .interviews .interview figure figcaption p.post-category a {
+          text-decoration: none;
+          color: inherit; }
+          .interviews .interview figure figcaption p.post-category a:hover {
+            text-decoration: underline; }
+      .interviews .interview figure figcaption p.post-date {
+        padding-top: 5px;
+        font-size: 12px;
+        font-size: 0.75rem;
+        font-family: "Raleway", sans-serif;
+        color: rgba(67, 74, 84, 0.5);
+        font-weight: 500; }
 
 div.home div#jumbo {
   margin-top: 40px;
@@ -344,6 +349,15 @@ div.home div#jumbo {
     text-align: right;
     font-family: "Raleway", sans-serif;
     font-weight: 200; }
+    @media (min-width: 481px) and (max-width: 768px) {
+      div.home div#jumbo div.title {
+        margin-right: 20%; } }
+    @media (min-width: 321px) and (max-width: 480px) {
+      div.home div#jumbo div.title {
+        margin-right: 20px; } }
+    @media (max-width: 320px) {
+      div.home div#jumbo div.title {
+        margin-right: 20px; } }
     div.home div#jumbo div.title h1 {
       font-weight: 200;
       margin: 0;
@@ -351,6 +365,14 @@ div.home div#jumbo {
       font-size: 5rem;
       line-height: 80px;
       line-height: 5rem; }
+      @media (min-width: 321px) and (max-width: 480px) {
+        div.home div#jumbo div.title h1 {
+          font-size: 4rem;
+          line-height: 4rem; } }
+      @media (max-width: 320px) {
+        div.home div#jumbo div.title h1 {
+          font-size: 3rem;
+          line-height: 3rem; } }
     div.home div#jumbo div.title p {
       margin: 0;
       font-size: 32px;

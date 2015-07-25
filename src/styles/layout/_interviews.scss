@@ -1,5 +1,7 @@
 .interviews {
   .interview {
+    margin-bottom: 20px;
+
     figure {
       position: relative;
       height: 300px;
@@ -14,6 +16,10 @@
 
         &:hover {
           transform: scale(1.025);
+        }
+
+        @include breakpoint(tp) {
+          height: 45%;
         }
       }
 
