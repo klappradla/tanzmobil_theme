@@ -28,3 +28,11 @@ a {
     color: $black;
   }
 }
+
+iframe {
+  width: 100%;
+
+  @include breakpoint(mp) {
+    height: auto;
+  }
+}

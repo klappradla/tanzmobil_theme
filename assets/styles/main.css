@@ -160,6 +160,12 @@ a {
   a:hover {
     color: #434A54; }
 
+iframe {
+  width: 100%; }
+  @media (max-width: 320px) {
+    iframe {
+      height: auto; } }
+
 .post {
   margin: auto;
   padding: 0 4em; }
