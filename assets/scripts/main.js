@@ -90,14 +90,14 @@ angular.module('tanzmobil')
   });;'use strict';
 
 angular.module('tanzmobil')
-  .controller('HomeCtrl', function ($scope, WpService) {
+  .controller('HomeCtrl', function ($scope, WpService, $sce) {
     WpService.recentPosts(6).then(function (response) {
       console.log(response);
       $scope.posts = response;
     });
 
     WpService.page('news').then(function (response) {
-      $scope.news = response;
+      $scope.news = $sce.trustAsHtml(response.content);
     })
   });;'use strict';
 
@@ -171,9 +171,10 @@ angular.module('tanzmobil')
 ;'use strict';
 
 angular.module('tanzmobil')
-  .controller('PageCtrl', function ($scope, WpService, $location) {
+  .controller('PageCtrl', function ($scope, WpService, $location, $sce) {
     WpService.page($location.url()).then(function(response) {
-      $scope.page = response;
+      $scope.page = $sce.trustAsHtml(response.content);
+      console.log($scope.page);
     });
   });
 ;'use strict';
