@@ -16,6 +16,7 @@
       <a ng-class="{ active: nav.isActive('/about')}" ng-href="/about">About</a>
       <a ng-class="{ active: nav.isActive('/interviews') }" ng-href="/interviews">Interviews</a>
       <a ng-class="{ active: nav.isActive('/contact')}" ng-href="/contact">Contact</a>
+      <search-form searchCallback="search(term)"></search-form>
     </nav>
   </header>
 

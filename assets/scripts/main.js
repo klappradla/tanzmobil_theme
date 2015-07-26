@@ -324,6 +324,9 @@ angular.module('tanzmobil')
           } else {
             console.log(scope.searchInput);
             scope.search(scope.searchInput);
+            $timeout(function() {
+              element.find('input')[0].blur(); 
+            });
           }
         };
 
