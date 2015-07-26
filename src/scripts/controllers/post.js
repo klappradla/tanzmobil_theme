@@ -4,7 +4,6 @@ angular.module('tanzmobil')
   .controller('PostCtrl', function ($scope, $routeParams, $sce, WpService) {
     WpService.post($routeParams.post).then(function(response) {
       $scope.post = response;
-      $scope.postDate = new Date($scope.post.date).toISOString();
       $scope.postContent = $sce.trustAsHtml($scope.post.content);
       $scope.postExcerpt = $sce.trustAsHtml($scope.post.excerpt);
     });
