@@ -166,6 +166,12 @@ iframe {
     iframe {
       height: auto; } }
 
+video {
+  width: 100%; }
+
+.wp-video {
+  width: 100% !important; }
+
 .post {
   margin: auto;
   padding: 0 4em; }
