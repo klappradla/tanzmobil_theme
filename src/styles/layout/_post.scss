@@ -1,6 +1,21 @@
 .post {
   margin: auto;
-  padding: 0 4em;
+  padding: 0 40px;
+
+  @include breakpoint(tl) {
+    padding: 10px;
+  }
+  @include breakpoint(tp) {
+    padding: 10px;
+  }
+
+  @include breakpoint(ml) {
+    padding: 10px;
+  }
+
+  @include breakpoint(mp) {
+    padding: 10px;
+  }
 
   .post-header {
     text-align: center;
@@ -16,9 +31,10 @@
       line-height: 3rem;
     }
 
-    .post-description {
-      font-weight: 500;
-      font-size: 1.5rem;
+    .post-excerpt {
+      font-weight: 400;
+      font-size: 1.4rem;
+      text-align: justify;
     }
 
     .tags {
@@ -62,6 +78,7 @@
 
   .post-content {
     font-family: $font-serif;
+    text-align: justify;
 
     h2 {
       @extend .question

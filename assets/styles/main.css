@@ -174,7 +174,19 @@ video {
 
 .post {
   margin: auto;
-  padding: 0 4em; }
+  padding: 0 40px; }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .post {
+      padding: 10px; } }
+  @media (min-width: 481px) and (max-width: 768px) {
+    .post {
+      padding: 10px; } }
+  @media (min-width: 321px) and (max-width: 480px) {
+    .post {
+      padding: 10px; } }
+  @media (max-width: 320px) {
+    .post {
+      padding: 10px; } }
   .post .post-header {
     text-align: center;
     margin-bottom: 60px; }
@@ -186,10 +198,11 @@ video {
       font-size: 3rem;
       line-height: 48px;
       line-height: 3rem; }
-    .post .post-header .post-description {
-      font-weight: 500;
-      font-size: 24px;
-      font-size: 1.5rem; }
+    .post .post-header .post-excerpt {
+      font-weight: 400;
+      font-size: 22px;
+      font-size: 1.4rem;
+      text-align: justify; }
     .post .post-header .tags {
       list-style: none;
       color: rgba(67, 74, 84, 0.5);
@@ -215,7 +228,8 @@ video {
     font-size: 1.15rem;
     margin-bottom: 0.5em; }
   .post .post-content {
-    font-family: "Roboto Slab", serif; }
+    font-family: "Roboto Slab", serif;
+    text-align: justify; }
     .post .post-content img {
       width: 100%;
       height: auto; }
