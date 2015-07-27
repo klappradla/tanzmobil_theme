@@ -12,7 +12,7 @@
     </ul>
 
     <a class="post-link" href="/interviews/{{ post.slug }}"><h2>{{ post.title }}</h2></a>
-    <p ng-bind-html="(post.excerpt | htmlToPlain | limitTo: 180) + '...'" class="post-meta"></p>
+    <p ng-bind-html="(post.excerpt | htmlToPlain | limitTo: 180) + '...'" class="post-excerpt"></p>
     <p class="post-category" font-color="{{ post.categories[0].slug }}">
       <a href="/interviews/category/{{ post.categories[0].slug }}"><i class="fa fa-flag"></i> {{ post.categories[0].slug }}</a>
     </p>

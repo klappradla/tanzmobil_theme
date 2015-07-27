@@ -237,7 +237,8 @@ video {
 .page .page-content {
   padding-top: 40px;
   padding-left: 10px;
-  padding-right: 10px; }
+  padding-right: 10px;
+  text-align: justify; }
   .page .page-content p {
     font-family: "Roboto Slab", serif;
     margin-bottom: 24px;
@@ -346,7 +347,8 @@ div.fixed-height {
         font-size: 1rem;
         padding-bottom: 5px;
         padding-top: 5px; }
-      .interviews .interview figure figcaption p.post-meta {
+      .interviews .interview figure figcaption p.post-excerpt {
+        text-align: justify;
         font-size: 12px;
         font-size: 0.75rem; }
       .interviews .interview figure figcaption p.post-category {
