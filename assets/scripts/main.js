@@ -426,15 +426,15 @@ angular.module('tanzmobil')
       switch(category) {
         case 'german':
           if (alpha) {
-            return 'rgba(252,110,81,0.5)';
+            return 'rgba(160,95,137,0.5)';
           }
-          return '#FC6E51';
-        case 'english':
-          if (alpha) {
-            return 'rgba(172,146,236,0.5)';
-          }
-          return '#AC92EC';
+          return '#A05F89';
         case 'french':
+          if (alpha) {
+            return 'rgba(54,185,160,0.5)';
+          }
+          return '#36B9A0';
+        case 'english':
           if (alpha) {
             return 'rgba(93,156,236,0.5)';
           }

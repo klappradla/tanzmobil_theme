@@ -155,7 +155,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #48CFAD;
+  color: #36B9A0;
   font-weight: 400; }
   a:hover {
     color: #434A54; }
@@ -281,7 +281,6 @@ video {
     font-weight: 300; }
     .contact td a {
       text-decoration: none;
-      color: #48CFAD;
       font-weight: 400; }
       .contact td a:hover {
         color: #434A54; }
@@ -511,7 +510,7 @@ div.section-header {
     div.section-header h2 span {
       font-weight: 500;
       font-style: italic;
-      color: #48CFAD; }
+      color: #36B9A0; }
 
 .section-content {
   padding: 10px;
@@ -536,7 +535,7 @@ div.section-header {
     display: inline; }
     .search-form button:hover {
       cursor: pointer;
-      color: #48CFAD; }
+      color: #36B9A0; }
   .search-form:after {
     content: "";
     display: table;
@@ -564,7 +563,7 @@ div.section-header {
     border: none;
     padding-bottom: 2px;
     background: none;
-    color: #48CFAD;
+    color: #36B9A0;
     font-size: 16px;
     font-size: 1rem;
     display: inline; }
