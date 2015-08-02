@@ -310,6 +310,13 @@ div.fixed-height {
       object-fit: cover;
       border-radius: 10px;
       transition: all 0.75s ease; }
+      .interviews .interview figure img:after {
+        content: ' ';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.6); }
       .interviews .interview figure img:hover {
         -webkit-transform: scale(1.025);
                 transform: scale(1.025); }

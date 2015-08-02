@@ -18,7 +18,7 @@ angular.module('tanzmobil')
         WpService.postsByCategory($routeParams.category).then(function(response) {
           $scope.posts = response;
         });
-        $scope.headline = ['Interviews of Category:', $routeParams.author];
+        $scope.headline = ['Interviews of Category:', $routeParams.category];
       } else if (typeof $routeParams.author !== 'undefined') {
         // post by category
         WpService.postsByAuthor($routeParams.author).then(function(response) {

@@ -20,7 +20,7 @@
           <i class="fa fa-user"></i> {{ post.author.nickname }}
         </a>
       </span>
-      <span><i class="fa fa-calendar-o"></i> {{ post.date | dateToISO }}</span>
+      <span ng-show="post.date"><i class="fa fa-calendar-o"></i> {{ post.date | dateToISO }}</span>
     </p>
   </section>
 
