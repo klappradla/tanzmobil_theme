@@ -5,39 +5,17 @@
 
 // font
 $font-size-main: 16px;
-//$line-hight-main: 28px;
 
 $font-main: 'Roboto', sans-serif;
 $font-serif: 'Roboto Slab', serif;
 $font-headline: 'Raleway', sans-serif;
 
-$color-font-main: #434A54;
-$color-font-light: #656D78;
-$color-font-white: #ffffff;
-
 // colors
-$color-background-red: #ED5565;
-$color-background-orange: #FC6E51;
-$color-background-violet: #AC92EC;
-$color-background-green: #48CFAD;
-$color-background-blue: #5D9CEC;
-
-$color-background-red-alpha: rgba($color-background-red, 0.5);
-$color-background-orange-alpha: rgba($color-background-orange, 0.5);
-$color-background-violet-alpha: rgba($color-background-violet, 0.5);
-$color-background-green-alpha: rgba($color-background-green, 0.5);
-$color-background-blue-alpha: rgba($color-background-blue, 0.5);
-
-// new
-$red: #ED5565;
-$orange: #FC6E51;
-$violet: #AC92EC;
+$berry: #A05F89;
 $green: #36B9A0;
 $blue: #5D9CEC;
 
-$red-alpha: rgba($red, 0.5);
-$orange-alpha: rgba($orange, 0.5);
-$violet-alpha: rgba($violet, 0.5);
+$berry-alpha: rgba($berry, 0.5);
 $green-alpha: rgba($green, 0.5);
 $blue-alpha: rgba($blue, 0.5);
 
@@ -50,42 +28,3 @@ $gray-light-alpha: rgba($gray-light, 0.5);
 $gray-medium-alpha: rgba($gray-medium, 0.5);
 $gray-dark-alpha: rgba($gray-dark, 0.5);
 $black-alpha: rgba($black, 0.5);
-
-// $font-tertiary: 'Loved by the King', cursive;
-
-
-// $color-font-secondary: #59453e;
-// $color-font-bright: #F6FAFB;
-
-// $color-ambient-mint: #83C7BD;
-// $color-ambient-mint-dark: #69a8a7;
-// $color-ambient-mint-light: #DBEFEC;
-
-// $color-ambient-rosa: #EC776A;
-// $color-ambient-rosa-dark: #ba564d;
-
-
-// $color-ambient-grey: #9b9b9b;
-// $color-ambient-grey-light: lighten($color-ambient-grey, 20);
-
-// $color-background-bright: #FCFCFC;
-// $color-background-mint: lighten($color-ambient-mint, 25);
-// $layout-max-width: 980px;
-
-// $boxShadow: 2px 2px 8px 0px rgba(0,0,0,0.32);
-// $boxShadow-light: 0px 0px 4px 0px rgba(0,0,0,0.20);
-
-// $textShadow-hardWhite: 2px 2px $color-background-bright;
-
-
-// // default color for input, selects, radios
-// $form-color-primary: $color-ambient-mint;
-// $form-color-secondary: lighten($form-color-primary, 25);
-// $form-color-tertiary: darken($form-color-primary, 5);
-
-
-// //textures
-// $texture-primary: url(image_path('texture-alpha-noise.png'));
-// $texture-secondary: url(image_path('concrete-wall.png'));
-// $texture-stoff1: url(image_path('texture-alpha-stoff1.png'));
-// $texture-stoff2: url(image_path('texture-alpha-stoff2.png'));
