@@ -14,7 +14,6 @@ angular.module('tanzmobil')
 
     function recentPosts(count) {
       count = count || 4;
-      //return queryApi('get_recent_posts/?count=' + count)
       return queryApi('posts?filter[posts_per_page]=' + count + '&filter[order]=DESC')
         .then(function(response) {
           console.log(response);
@@ -24,9 +23,9 @@ angular.module('tanzmobil')
 
     // get wp page by slug
     function page(slug) {
-      return queryApi('get_page/?slug=' + slug)
+      return queryApi('pages?filter[name]=' + slug)
         .then(function(response) {
-          return response.data.page;
+          return response.data;
         });
     }
 

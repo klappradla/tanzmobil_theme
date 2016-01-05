@@ -10,7 +10,7 @@ angular.module('tanzmobil')
     // WpService.page('news').then(function (response) {
     //   $scope.news = $sce.trustAsHtml(response.content);
     // })
-    WpService.allPosts().then(function (response) {
+    WpService.page('news').then(function (response) {
       console.log(response);
     });
   });
