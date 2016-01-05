@@ -91,15 +91,19 @@ angular.module('tanzmobil')
 
 angular.module('tanzmobil')
   .controller('HomeCtrl', function ($scope, WpService, $sce) {
-    WpService.recentPosts(6).then(function (response) {
+    // WpService.recentPosts(6).then(function (response) {
+    //   console.log(response);
+    //   $scope.posts = response;
+    // });
+    //
+    // WpService.page('news').then(function (response) {
+    //   $scope.news = $sce.trustAsHtml(response.content);
+    // })
+    WpService.allPosts().then(function (response) {
       console.log(response);
-      $scope.posts = response;
     });
-
-    WpService.page('news').then(function (response) {
-      $scope.news = $sce.trustAsHtml(response.content);
-    })
-  });;'use strict';
+  });
+;'use strict';
 
 angular.module('tanzmobil')
   .controller('InterviewsCtrl', function ($scope, $routeParams, $location, WpService) {
@@ -472,8 +476,8 @@ angular.module('tanzmobil')
     var apiUrl = CONFIG.API_URL;
 
     function allPosts() {
-      return queryApi('get_posts').then(function(response) {
-        return response.data.posts;
+      return queryApi('posts').then(function(response) {
+        return response.data;
       });
     }
 
@@ -506,14 +510,14 @@ angular.module('tanzmobil')
       return queryApi('get_category_posts/?slug=' + slug)
         .then(function(response) {
           return response.data.posts;
-        });      
+        });
     }
 
     function postsByTag(slug) {
       return queryApi('get_tag_posts/?tag_slug=' + slug)
         .then(function(response) {
           return response.data.posts;
-        });      
+        });
     }
 
     function postsByTerm(searchTerm) {
@@ -526,7 +530,7 @@ angular.module('tanzmobil')
         });
     }
 
-    function postsByAuthor(slug) {      
+    function postsByAuthor(slug) {
       return queryApi('get_author_posts/?slug=' + slug)
         .then(function(response) {
           var posts = response.data.posts;
@@ -560,4 +564,5 @@ angular.module('tanzmobil')
     };
 
   });
+
 //# sourceMappingURL=main.js.map

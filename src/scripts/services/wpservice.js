@@ -7,8 +7,8 @@ angular.module('tanzmobil')
     var apiUrl = CONFIG.API_URL;
 
     function allPosts() {
-      return queryApi('get_posts').then(function(response) {
-        return response.data.posts;
+      return queryApi('posts').then(function(response) {
+        return response.data;
       });
     }
 
@@ -41,14 +41,14 @@ angular.module('tanzmobil')
       return queryApi('get_category_posts/?slug=' + slug)
         .then(function(response) {
           return response.data.posts;
-        });      
+        });
     }
 
     function postsByTag(slug) {
       return queryApi('get_tag_posts/?tag_slug=' + slug)
         .then(function(response) {
           return response.data.posts;
-        });      
+        });
     }
 
     function postsByTerm(searchTerm) {
@@ -61,7 +61,7 @@ angular.module('tanzmobil')
         });
     }
 
-    function postsByAuthor(slug) {      
+    function postsByAuthor(slug) {
       return queryApi('get_author_posts/?slug=' + slug)
         .then(function(response) {
           var posts = response.data.posts;
