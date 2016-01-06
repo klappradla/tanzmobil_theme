@@ -10,7 +10,7 @@ angular.module('tanzmobil')
     // WpService.page('news').then(function (response) {
     //   $scope.news = $sce.trustAsHtml(response.content);
     // })
-    WpService.postsByCategory('french').then(function (response) {
+    WpService.postsByTerm('zwei eulen').then(function (response) {
       console.log(response);
     });
   });

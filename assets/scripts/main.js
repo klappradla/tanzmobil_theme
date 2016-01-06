@@ -99,7 +99,7 @@ angular.module('tanzmobil')
     // WpService.page('news').then(function (response) {
     //   $scope.news = $sce.trustAsHtml(response.content);
     // })
-    WpService.postsByCategory('french').then(function (response) {
+    WpService.postsByTerm('zwei eulen').then(function (response) {
       console.log(response);
     });
   });
@@ -485,7 +485,6 @@ angular.module('tanzmobil')
       count = count || 4;
       return queryApi('posts?filter[posts_per_page]=' + count + '&filter[order]=DESC')
         .then(function(response) {
-          console.log(response);
           return response.data;
         });
     }
@@ -512,30 +511,24 @@ angular.module('tanzmobil')
         });
     }
 
-    function postsByTag(slug) {
-      return queryApi('get_tag_posts/?tag_slug=' + slug)
+    function postsByTag(tagname) {
+      return queryApi('posts?filter[tag]=' + tagname)
         .then(function(response) {
-          return response.data.posts;
+          return response.data;
         });
     }
 
     function postsByTerm(searchTerm) {
-      return queryApi('get_search_results/?search=' + searchTerm)
+      return queryApi('posts?filter[s]=' + searchTerm)
         .then(function(response) {
-          var posts = response.data.posts;
-
-          console.log(response.data);
-          return posts.filter(filterForPostType);
+          return response.data;
         });
     }
 
-    function postsByAuthor(slug) {
-      return queryApi('get_author_posts/?slug=' + slug)
+    function postsByAuthor(author_name) {
+      return queryApi('posts?filter[author_name]=' + author_name)
         .then(function(response) {
-          var posts = response.data.posts;
-
-          console.log(response.data);
-          return posts.filter(filterForPostType);
+          return response.data;
         });
     }
 
@@ -545,10 +538,6 @@ angular.module('tanzmobil')
         .then(function(response) {
           return response;
         });
-    }
-
-    function filterForPostType(post) {
-      return post['type'] === 'post';
     }
 
     return {
