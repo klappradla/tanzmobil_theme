@@ -25,21 +25,21 @@ angular.module('tanzmobil')
     function page(slug) {
       return queryApi('pages?filter[name]=' + slug)
         .then(function(response) {
-          return response.data;
+          return response.data[0];
         });
     }
 
     function post(slug) {
-      return queryApi('get_post/?slug=' + slug)
+      return queryApi('posts?filter[name]=' + slug)
         .then(function(response) {
-          return response.data.post;
+          return response.data[0];
         });
     }
 
     function postsByCategory(slug) {
-      return queryApi('get_category_posts/?slug=' + slug)
+      return queryApi('posts?filter[category_name]=' + slug)
         .then(function(response) {
-          return response.data.posts;
+          return response.data;
         });
     }
 
