@@ -7,7 +7,13 @@ module.exports = function(grunt) {
         files: {
           //'dist/main.css' : 'styles/main.scss'
           'assets/styles/main.css' : 'src/styles/main.scss'
-        }
+        },
+      options: {
+        loadPath: [
+          'assets/vendor/bourbon/app/assets/stylesheets',
+          'assets/vendor/neat/app/assets/stylesheets'
+        ]
+      }
       }
     },
     concat: {

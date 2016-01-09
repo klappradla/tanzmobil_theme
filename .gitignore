@@ -1,5 +1,8 @@
+# ignore npm packages
 node_modules
+# ignore bower packages
+assets/vendor
 .tmp
 .sass-cache
-assets/vendor
+# ignore build
 theme/
