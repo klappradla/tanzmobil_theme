@@ -13,42 +13,42 @@ function ae_scripts() {
 	// Vendor
 	wp_register_script(
 		'angularjs',
-		get_stylesheet_directory_uri() . '/assets/bower_components/angular/angular.min.js'
+		get_stylesheet_directory_uri() . '/assets/vendor/angular/angular.min.js'
 	);
 
 	wp_register_script(
 		'angularjs-route',
-		get_stylesheet_directory_uri() . '/assets/bower_components/angular-route/angular-route.min.js'
+		get_stylesheet_directory_uri() . '/assets/vendor/angular-route/angular-route.min.js'
 	);
 
 	wp_register_script(
 		'angularjs-sanitize',
-		get_stylesheet_directory_uri() . '/assets/bower_components/angular-sanitize/angular-sanitize.min.js'
+		get_stylesheet_directory_uri() . '/assets/vendor/angular-sanitize/angular-sanitize.min.js'
 	);
 
 	wp_register_script(
 		'angularjs-resource',
-		get_stylesheet_directory_uri() . '/assets/bower_components/angular-resource/angular-resource.min.js'
+		get_stylesheet_directory_uri() . '/assets/vendor/angular-resource/angular-resource.min.js'
 	);
 
 	wp_register_script(
 		'angularjs-touch',
-		get_stylesheet_directory_uri() . '/assets/bower_components/angular-touch/angular-touch.min.js'
+		get_stylesheet_directory_uri() . '/assets/vendor/angular-touch/angular-touch.min.js'
 	);
 
 	wp_register_script(
 		'jquery',
-		get_stylesheet_directory_uri() . '/assets/bower_components/jquery/dist/jquery.min.js'
+		get_stylesheet_directory_uri() . '/assets/vendor/jquery/dist/jquery.min.js'
 	);
 
 	wp_register_script(
 		'snap.svg',
-		get_stylesheet_directory_uri() . '/assets/bower_components/snap.svg/dist/snap.svg-min.js'
+		get_stylesheet_directory_uri() . '/assets/vendor/snap.svg/dist/snap.svg-min.js'
 	);
 
 	wp_register_script(
 		'theaterjs',
-		get_stylesheet_directory_uri() . '/assets/bower_components/theaterjs/build/theater.min.js'
+		get_stylesheet_directory_uri() . '/assets/vendor/theaterjs/build/theater.min.js'
 	);
 
 	// App script
