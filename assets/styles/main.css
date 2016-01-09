@@ -200,7 +200,7 @@ video {
       line-height: 3rem; }
     .post .post-header .post-excerpt {
       font-weight: 400;
-      font-size: 22px;
+      font-size: 22.4px;
       font-size: 1.4rem;
       text-align: justify; }
     .post .post-header .tags {
@@ -224,7 +224,7 @@ video {
     margin-bottom: 0.5em;
     margin-top: 1.5em; }
   .post .answer, .post .post-content p {
-    font-size: 18px;
+    font-size: 18.4px;
     font-size: 1.15rem;
     margin-bottom: 0.5em; }
   .post .post-content {
@@ -464,6 +464,7 @@ header nav {
       opacity: 0;
       transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
       transition: height 0.3s, opacity 0.3s, transform 0.3s;
+      transition: height 0.3s, opacity 0.3s, transform 0.3s, -webkit-transform 0.3s;
       -webkit-transform: translateY(-10px);
               transform: translateY(-10px); }
     header nav a:hover::after, header nav a:focus::after {
@@ -537,7 +538,7 @@ div.section-header {
     padding-bottom: 2px;
     background: none;
     color: #656D78;
-    font-size: 14px;
+    font-size: 14.4px;
     font-size: 0.9rem;
     display: inline; }
     .search-form button:hover {
